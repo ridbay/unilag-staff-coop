@@ -15,124 +15,129 @@ import Button from "@mui/material/Button";
 import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
 import AdbIcon from "@mui/icons-material/Adb";
-import UnilagLogo from "../../public/imgs/unilag-logo.png"
-import MainLogo from "../../public/imgs/main-logo.png"
+import MenuSharpIcon from "@mui/icons-material/MenuSharp";
+import UnilagLogo from "../../public/imgs/unilag-logo.png";
+import MainLogo from "../../public/imgs/main-logo.png";
 
-
-const pages = [{text: "About us", link: "/about-us"},{text: "Product & Services", link: "/services"},{text: "Resources", link: "/resources/downloads"},{text: "Contact Us", link: "/contact-us"},{text: "Sign Up", link: "/sign-up"}];
-const settings = ["Profile", "Account", "Dashboard", "Logout"];
+const pages = [
+  { text: "About us", link: "/about-us" },
+  { text: "Product & Services", link: "/services" },
+  { text: "Resources", link: "/resources/downloads" },
+  { text: "Contact Us", link: "/contact-us" },
+  { text: "Sign Up", link: "/sign-up" },
+];
+const resources = [
+  { text: "Events", link: "/events" },
+  { text: "Downloads", link: "/resources/downloads" },
+  { text: "FAQs", link: "/faqs" },
+];
 
 const Navbar = () => {
-    const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(
-      null
-    );
-    const [anchorElUser, setAnchorElUser] = React.useState<null | HTMLElement>(
-      null
-    );
-      const router = useRouter();
-      const isActiveRoute = (route: any) => router.pathname === route;
+  const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(
+    null
+  );
+  const [anchorElUser, setAnchorElUser] = React.useState<null | HTMLElement>(
+    null
+  );
+  const router = useRouter();
+  const isActiveRoute = (route: any) => router.pathname === route;
 
-    const handleOpenNavMenu = (event: React.MouseEvent<HTMLElement>) => {
-      setAnchorElNav(event.currentTarget);
-    };
-    const handleOpenUserMenu = (event: React.MouseEvent<HTMLElement>) => {
-      setAnchorElUser(event.currentTarget);
-    };
+  const handleOpenNavMenu = (event: React.MouseEvent<HTMLElement>) => {
+    setAnchorElNav(event.currentTarget);
+  };
+  const handleOpenUserMenu = (event: React.MouseEvent<HTMLElement>) => {
+    setAnchorElUser(event.currentTarget);
+    console.log(event.currentTarget);
 
-    const handleCloseNavMenu = () => {
-      setAnchorElNav(null);
-    };
+  };
 
-    const handleCloseUserMenu = () => {
-      setAnchorElUser(null);
-    };
+  const handleCloseNavMenu = () => {
+    setAnchorElNav(null);
+  };
+
+  const handleCloseUserMenu = () => {
+    setAnchorElUser(null);
+  };
   return (
     <div>
-      <AppBar position="static" sx={{backgroundColor: "white",}}>
+      <AppBar position="static" sx={{ backgroundColor: "white" }}>
         <Container maxWidth="xl">
-          <Toolbar disableGutters>
-            <Image
-              src={UnilagLogo}
-              alt="Unilag Logo"
-              className="w-[2rem] h-[2rem]"
-            />
-            <Image
-              src={MainLogo}
-              alt="Staff coop Logo"
-              className="w-[2rem] h-[2rem]"
-            />
-
-            <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
-              <IconButton
-                size="large"
-                aria-label="account of current user"
-                aria-controls="menu-appbar"
-                aria-haspopup="true"
-                onClick={handleOpenNavMenu}
-                color="inherit"
-              >
-                <MenuIcon />
-              </IconButton>
+          <Toolbar
+            disableGutters
+            sx={{
+              display: "flex",
+              justifyContent: { xs: "space-between", md: "" },
+            }}
+          >
+            <Link href="/" className="flex items-center">
+              <Image
+                src={MainLogo}
+                alt="Staff coop Logo"
+                className="w-[2.5rem] h-[2.5rem]"
+              />
+              <Image
+                src={UnilagLogo}
+                alt="Unilag Logo"
+                className="w-[2.5rem] h-[2.5rem]"
+              />
+            </Link>
+            <Box
+              sx={{
+                width: "100%",
+                display: { xs: "none", md: "flex" },
+                justifyContent: "center",
+                gap: "2rem",
+              }}
+            >
+              {pages.map((page) => (
+                <Button
+                  key={page.text}
+                  onClick={(e) => {
+                    if (page.text == "Resources") {
+                      handleOpenNavMenu(e);
+                    } else {
+                      handleCloseNavMenu();
+                    }
+                  }}
+                  sx={{
+                    my: 2,
+                    color: `${isActiveRoute(page.link) ? "blue" : "black"}`,
+                    display: "block",
+                  }}
+                >
+                  <Link href={page.link}>{page.text}</Link>
+                </Button>
+              ))}
               <Menu
+                sx={{ mt: "45px" }}
                 id="menu-appbar"
                 anchorEl={anchorElNav}
                 anchorOrigin={{
-                  vertical: "bottom",
-                  horizontal: "left",
+                  vertical: "top",
+                  horizontal: "right",
                 }}
                 keepMounted
                 transformOrigin={{
                   vertical: "top",
-                  horizontal: "left",
+                  horizontal: "right",
                 }}
                 open={Boolean(anchorElNav)}
                 onClose={handleCloseNavMenu}
-                sx={{
-                  display: { xs: "block", md: "none" },
-                }}
               >
-                {pages.map((page) => (
+                {resources.map((page) => (
                   <MenuItem key={page.text} onClick={handleCloseNavMenu}>
-                    <Typography textAlign="center"><Link href={page.link}>{page.text}</Link></Typography>
+                    <Link href={page.link}>
+                      <Typography textAlign="center">{page.text}</Typography>
+                    </Link>
                   </MenuItem>
                 ))}
               </Menu>
             </Box>
-            <AdbIcon sx={{ display: { xs: "flex", md: "none" }, mr: 1 }} />
-            <Typography
-              variant="h5"
-              noWrap
-              component="a"
-              href="/"
-              sx={{
-                mr: 2,
-                display: { xs: "flex", md: "none" },
-                flexGrow: 1,
-                fontFamily: "monospace",
-                fontWeight: 700,
-                letterSpacing: ".3rem",
-                color: "inherit",
-                textDecoration: "none",
-              }}
-            >
-              LOGO
-            </Typography>
-            <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
-              {pages.map((page) => (
-                <Button
-                  key={page.text}
-                  onClick={handleCloseNavMenu}
-                  sx={{ my: 2, color: `${isActiveRoute(page.link) ? "blue" : "black"}`, display: "block" }}
-                >
-                 <Link href={page.link}>{page.text}</Link>
-                </Button>
-              ))}
-            </Box>
 
-            <Box sx={{ flexGrow: 0 }}>
-              <Tooltip title="Open settings">
+            <Box sx={{ flexGrow: 0, display: { xs: "flex", md: "none" } }}>
+              <Tooltip title="Open menu">
                 <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-                  <Avatar alt="Remy Sharp" src="/static/images/avatar/2.jpg" />
+                  <MenuSharpIcon />
                 </IconButton>
               </Tooltip>
               <Menu
@@ -151,9 +156,11 @@ const Navbar = () => {
                 open={Boolean(anchorElUser)}
                 onClose={handleCloseUserMenu}
               >
-                {settings.map((setting) => (
-                  <MenuItem key={setting} onClick={handleCloseUserMenu}>
-                    <Typography textAlign="center">{setting}</Typography>
+                {pages.map((page) => (
+                  <MenuItem key={page.text} onClick={handleCloseUserMenu}>
+                    <Link href={page.link}>
+                      <Typography textAlign="center">{page.text}</Typography>
+                    </Link>
                   </MenuItem>
                 ))}
               </Menu>
