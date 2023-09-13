@@ -1,4 +1,7 @@
 import * as React from "react";
+import Image from "next/image";
+import Link from "next/link";
+import { useRouter } from "next/router";
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
 import Toolbar from "@mui/material/Toolbar";
@@ -12,9 +15,11 @@ import Button from "@mui/material/Button";
 import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
 import AdbIcon from "@mui/icons-material/Adb";
+import UnilagLogo from "../../public/imgs/unilag-logo.png"
+import MainLogo from "../../public/imgs/main-logo.png"
 
 
-const pages = ["Products", "Pricing", "Blog"];
+const pages = [{text: "About us", link: "/about-us"},{text: "Product & Services", link: "/services"},{text: "Resources", link: "/resources/downloads"},{text: "Contact Us", link: "/contact-us"},{text: "Sign Up", link: "/sign-up"}];
 const settings = ["Profile", "Account", "Dashboard", "Logout"];
 
 const Navbar = () => {
@@ -24,6 +29,8 @@ const Navbar = () => {
     const [anchorElUser, setAnchorElUser] = React.useState<null | HTMLElement>(
       null
     );
+      const router = useRouter();
+      const isActiveRoute = (route: any) => router.pathname === route;
 
     const handleOpenNavMenu = (event: React.MouseEvent<HTMLElement>) => {
       setAnchorElNav(event.currentTarget);
@@ -41,27 +48,19 @@ const Navbar = () => {
     };
   return (
     <div>
-      <AppBar position="static">
+      <AppBar position="static" sx={{backgroundColor: "white",}}>
         <Container maxWidth="xl">
           <Toolbar disableGutters>
-            <AdbIcon sx={{ display: { xs: "none", md: "flex" }, mr: 1 }} />
-            <Typography
-              variant="h6"
-              noWrap
-              component="a"
-              href="/"
-              sx={{
-                mr: 2,
-                display: { xs: "none", md: "flex" },
-                fontFamily: "monospace",
-                fontWeight: 700,
-                letterSpacing: ".3rem",
-                color: "inherit",
-                textDecoration: "none",
-              }}
-            >
-              LOGO
-            </Typography>
+            <Image
+              src={UnilagLogo}
+              alt="Unilag Logo"
+              className="w-[2rem] h-[2rem]"
+            />
+            <Image
+              src={MainLogo}
+              alt="Staff coop Logo"
+              className="w-[2rem] h-[2rem]"
+            />
 
             <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
               <IconButton
@@ -93,8 +92,8 @@ const Navbar = () => {
                 }}
               >
                 {pages.map((page) => (
-                  <MenuItem key={page} onClick={handleCloseNavMenu}>
-                    <Typography textAlign="center">{page}</Typography>
+                  <MenuItem key={page.text} onClick={handleCloseNavMenu}>
+                    <Typography textAlign="center"><Link href={page.link}>{page.text}</Link></Typography>
                   </MenuItem>
                 ))}
               </Menu>
@@ -121,11 +120,11 @@ const Navbar = () => {
             <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
               {pages.map((page) => (
                 <Button
-                  key={page}
+                  key={page.text}
                   onClick={handleCloseNavMenu}
-                  sx={{ my: 2, color: "white", display: "block" }}
+                  sx={{ my: 2, color: `${isActiveRoute(page.link) ? "blue" : "black"}`, display: "block" }}
                 >
-                  {page}
+                 <Link href={page.link}>{page.text}</Link>
                 </Button>
               ))}
             </Box>
