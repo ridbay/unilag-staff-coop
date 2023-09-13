@@ -1,7 +1,9 @@
 
 
 const Footer = () => {
-  return <div></div>;
+  return <div className="w-full h-[22rem] bg-theme-color">
+
+  </div>;
 };
 
 export default Footer;

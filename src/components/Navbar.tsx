@@ -48,7 +48,6 @@ const Navbar = () => {
   const handleOpenUserMenu = (event: React.MouseEvent<HTMLElement>) => {
     setAnchorElUser(event.currentTarget);
     console.log(event.currentTarget);
-
   };
 
   const handleCloseNavMenu = () => {
@@ -59,9 +58,15 @@ const Navbar = () => {
     setAnchorElUser(null);
   };
   return (
-    <div>
-      <AppBar position="static" sx={{ backgroundColor: "white" }}>
-        <Container maxWidth="xl">
+    <div className="">
+      <AppBar
+        position="static"
+        sx={{ backgroundColor: "white", fontSize: "6rem" }}
+      >
+        <Container
+          maxWidth="xl"
+          sx={{ paddingTop: ".5rem", paddingBottom: ".5rem" }}
+        >
           <Toolbar
             disableGutters
             sx={{
@@ -105,7 +110,9 @@ const Navbar = () => {
                     display: "block",
                   }}
                 >
-                  <Link href={page.link}>{page.text}</Link>
+                  <Link href={page.link}>
+                    <Typography fontSize={17}>{page.text}</Typography>
+                  </Link>
                 </Button>
               ))}
               <Menu
