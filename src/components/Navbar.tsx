@@ -71,7 +71,7 @@ const Navbar = () => {
             disableGutters
             sx={{
               display: "flex",
-              justifyContent: { xs: "space-between", md: "" },
+              justifyContent: "space-between",
             }}
           >
             <Link href="/" className="flex items-center">
@@ -88,9 +88,9 @@ const Navbar = () => {
             </Link>
             <Box
               sx={{
-                width: "100%",
+            
                 display: { xs: "none", md: "flex" },
-                justifyContent: "center",
+                
                 gap: "2rem",
               }}
             >
