@@ -36,3 +36,12 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+
+
+## Style Guide
+
+For Headings use 2rem for fontSize and 600 for FontWeight --> On mobile reduces to 1.5rem
+
+For SubHeadings use 1.5rem for fontSize and 500 for fontWieght  --> On mobile reduces to 1rem
+
+For textBody use 1rem for fontSize and 500 for fontWeight --> On mobile reduces to 0.875rem

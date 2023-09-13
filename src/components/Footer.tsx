@@ -1,45 +1,51 @@
-
 import Image from "next/image";
 import TwitterIcon from "@mui/icons-material/Twitter";
 import Link from "next/link";
 import FacebookIcon from "@mui/icons-material/Facebook";
 import YouTubeIcon from "@mui/icons-material/YouTube";
-import MainLogo from "../../public/imgs/main-logo.png"
+import MainLogo from "../../public/imgs/main-logo.png";
 
 const Footer = () => {
   return (
-    <div className="w-full text-white p-4 min-h-[22rem] bg-theme-color">
+    <div className="w-full text-white p-6 min-h-[22rem] bg-theme-color">
       <div className="flex flex-col gap-4">
-        <div className="mobile:grid mobile:grid-cols-1 mobile:gap-4 tab:grid tab:grid-cols-2 tab:gap-6 md:justify-between lg:flex lg:gap-24">
+        <div className="grid grid-cols-1 gap-4 md:grid md:grid-cols-2 md:gap-6 md:justify-between lg:flex lg:gap-24">
           <div>
-            <p>
-              <span className="font-semibold uppercase">Contact Address</span>
+            <p className="font-semibold mb-2 uppercase ">Contact Address</p>
+            <p className="text-[1rem]">
+              HRDC Building,
               <br />
-              Call Lagos: +234-7000123450
+              Ground Floor, Room 001,
               <br />
-              Call Abuja: +234-7000123451
+              Akin Adesola Road, University of Lagos, <br />
+              Akoka, Yaba, Lagos.
             </p>
           </div>
           <div>
-            <p>
-              <span className="font-semibold ">E-Mail</span> <br />
-              Email: frontdesk@kamholding.net
+            <p className="font-semibold mb-2 uppercase">Mobile Contact</p>
+            <p className="text-[1rem]">
+              Email: contact@uniqueunilagstaffcoop.org
+              <br />
+              Phone: 0807 726 2847
             </p>
           </div>
-          <div>
+          <div className="">
             <div className="mb-3 font-semibold uppercase">Social connect</div>
             <div className="flex gap-3">
-              <a href="https://www.facebook.com/kam_holding/" className="">
+              <a
+                href="https://www.facebook.com/uniqueunilagstaffcoop/"
+                className=""
+              >
                 <FacebookIcon />
                 {/* <RiFacebookCircleLine size={25} /> */}
               </a>
 
-              <a href="https://www.instagram.com/kam_holding/" className="">
+              <a href="https://www.twitter.com/uniquecoopsoc" className="">
                 <TwitterIcon />
                 {/* <AiFillInstagram size={25} /> */}
               </a>
               <a
-                href="https://www.linkedin.com/company/kam-holding/"
+                href="https://www.youtube.com/uniqueunilagstaffcoop"
                 className=""
               >
                 <YouTubeIcon />
@@ -59,7 +65,7 @@ const Footer = () => {
               className="w-[8rem] h-[8rem]"
             />
           </div>
-          <div className="flex flex-col gap-6">
+          <div className="flex flex-col gap-4 text-[1rem]">
             <p>
               © 2023 Unique Unilag Staff Cooperative Multipurpose Society
               Limited{" "}

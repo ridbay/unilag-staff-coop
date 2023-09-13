@@ -61,7 +61,7 @@ const Navbar = () => {
     <div className="">
       <AppBar
         position="static"
-        sx={{ backgroundColor: "white", fontSize: "6rem" }}
+        sx={{ backgroundColor: "white", fontSize: "6rem", }}
       >
         <Container
           maxWidth="xl"
@@ -106,12 +106,12 @@ const Navbar = () => {
                   }}
                   sx={{
                     my: 2,
-                    color: `${isActiveRoute(page.link) ? "blue" : "black"}`,
+                    color: `${isActiveRoute(page.link) ? "primary" : "black"}`,
                     display: "block",
                   }}
                 >
                   <Link href={page.link}>
-                    <Typography fontSize={17}>{page.text}</Typography>
+                    <Typography variant="h6">{page.text}</Typography>
                   </Link>
                 </Button>
               ))}
