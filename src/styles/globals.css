@@ -17,3 +17,8 @@
 }
 
 
+.mission_component {
+  @apply grid grid-cols-1 gap-[2rem] items-center md:grid-cols-3;
+}
+
+
