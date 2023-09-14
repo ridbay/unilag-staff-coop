@@ -29,7 +29,7 @@ export default function Home() {
             on permanent appointment or whose appointment has been regularised
             by the University’s Governing Council.
           </p>
-          <button className="bg-theme-color px-6 py-4 rounded-md hover:bg-white hover:border-2 hover:border-theme-color hover:text-theme-color transition-all duration-700 ease-in-out text-white mt-4">
+          <button className="bg-theme-color px-6 py-4 rounded-md hover:bg-white hover:border-2 hover:border-theme-color scroll-smooth hover:text-theme-color transition-all duration-700 ease-in-out text-white mt-4">
             <Link href="/faqs">Read more</Link>
           </button>
         </div>

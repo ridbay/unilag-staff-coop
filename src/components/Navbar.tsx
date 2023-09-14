@@ -18,11 +18,12 @@ import AdbIcon from "@mui/icons-material/Adb";
 import MenuSharpIcon from "@mui/icons-material/MenuSharp";
 import UnilagLogo from "../../public/imgs/unilag-logo.png";
 import MainLogo from "../../public/imgs/main-logo.png";
+import { RiArrowDownSLine } from "react-icons/ri";
 
 const pages = [
   { text: "About us", link: "/about-us" },
   { text: "Product & Services", link: "/services" },
-  { text: "Resources", link: "/resources/downloads" },
+  { text: "Resources", link: "/resources/downloads"},
   { text: "Contact Us", link: "/contact-us" },
   { text: "Sign Up", link: "/sign-up" },
 ];
@@ -61,7 +62,7 @@ const Navbar = () => {
     <div className="">
       <AppBar
         position="static"
-        sx={{ backgroundColor: "white", fontSize: "6rem", }}
+        sx={{ backgroundColor: "white", fontSize: "6rem" }}
       >
         <Container
           maxWidth="xl"
@@ -88,9 +89,8 @@ const Navbar = () => {
             </Link>
             <Box
               sx={{
-            
                 display: { xs: "none", md: "flex" },
-                
+
                 gap: "2rem",
               }}
             >
@@ -110,8 +110,17 @@ const Navbar = () => {
                     display: "block",
                   }}
                 >
-                  <Link href={page.link}>
-                    <Typography variant="h6">{page.text}</Typography>
+                  <Link href={page.text === "Resources" ? "/" : page.link}>
+                    <Typography variant="h6">
+                      {page.text == "Resources" ? (
+                        <p className="flex items-center gap-1">
+                          {page.text}
+                          <RiArrowDownSLine size={30} />
+                        </p>
+                      ) : (
+                        <p>{page.text}</p>
+                      )}
+                    </Typography>
                   </Link>
                 </Button>
               ))}
