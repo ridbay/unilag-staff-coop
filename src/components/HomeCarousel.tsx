@@ -61,7 +61,7 @@ const Carousel: React.FC<CarouselProps> = ({ images }) => {
           <div
             key={index}
             className={`w-6 h-6 rounded-full ${
-              index === currentIndex ? "bg-white" : "bg-gray-400"
+              index === currentIndex ? "bg-theme-color" : "bg-white"
             }`}
             onClick={() => setCurrentIndex(index)}
           />

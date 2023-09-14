@@ -6,6 +6,15 @@ import AlarmOnIcon from "@mui/icons-material/AlarmOn";
 import Aim from "../../public/imgs/aims.jpg"
 import LoyaltyIcon from "@mui/icons-material/Loyalty";
 import Operations from "../../public/imgs/operations.jpg"
+import {BsAlarm} from "react-icons/bs"
+import {MdLoyalty} from "react-icons/md"
+import LandedProperty from "../../public/imgs/landed-properties-4.jpg"
+import EmergencyLoan from "../../public/imgs/emergency-loan-2.png"
+import Investment from "../../public/imgs/investment.jpg"
+import Dividend from "../../public/imgs/dividend gains.jpg"
+import HouseHold from "../../public/imgs/household-equipment-loan.jpg"
+import Insurance from "../../public/imgs/group-insurance-life-scheme.png"
+
 
 type whoWeAreSectionDataType = {
     text: string;
@@ -43,39 +52,49 @@ export const whoWeAreSectionData: whoWeAreSectionDataType = [
 
 export const CardContent = [
   {
-    icon: AlarmOnIcon,
+    icon: BsAlarm,
     heading: "Normal Loan",
     content:
       "Members are eligible to normal loan facility of not more than 200% of their saving balance with a maximum repayment period of 24 months.",
   },
   {
-    icon: LoyaltyIcon,
+    icon: MdLoyalty,
     heading: "Household Equipment Loan",
     content:
       "“Members are eligible to equipment loan facility of not more than saving balance and NGN500,000 with a maximum repayment period of 9 months",
   },
   {
-    icon: AlarmOnIcon,
+    icon: MdLoyalty,
     heading: "Emergency Loan",
     content:
       "Members are entitled to emergency loan. Applications are subject to applicants' ability to payback within the stipulated period.",
   },
   {
-    icon: AlarmOnIcon,
+    icon: MdLoyalty,
     heading: "Commodity Sales",
     content:
       "Members are entitled to emergency loan. Applications are subject to applicants' ability to payback within the stipulated period.",
   },
   {
-    icon: AlarmOnIcon,
+    icon: MdLoyalty,
     heading: "AGM Sales",
     content:
-      "KAM is the only 100% indigenous steel and allied manufacturing company in Nigeria and produces a wide range of products like Nails, Binding Wire, Wire Mesh, Roofing Sheet, Stone Coated Roofing Tile.",
+      "Members are eligible to normal loan facility of not more than 200% of their saving balance with a maximum repayment period of 24 months",
   },
   {
-    icon: AlarmOnIcon,
+    icon: MdLoyalty,
     heading: "Advisory Services",
     content:
-      "KAM is the only 100% indigenous steel and allied manufacturing company in Nigeria and produces a wide range of products like Nails, Binding Wire, Wire Mesh, Roofing Sheet, Stone Coated Roofing Tile.",
+      "Members are eligible to normal loan facility of not more than 200% of their saving balance with a maximum repayment period of 24 months",
   },
+];
+
+
+export const MembersBenefits = [
+  { image: Investment, data: "Investment Opportunities" },
+  { image: EmergencyLoan, data: "Access To Emergency Loan" },
+  { image: LandedProperty, data: "Landed Property Acquisition" },
+  { image: Dividend, data: "Dividend Gains" },
+  { image: HouseHold, data: "Household Equipment Loan" },
+  { image: Insurance, data: "Group Life Insurance Scheme" },
 ];
