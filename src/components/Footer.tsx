@@ -7,7 +7,7 @@ import MainLogo from "../../public/imgs/main-logo.png";
 
 const Footer = () => {
   return (
-    <div className="w-full text-white p-6 mt-12 min-h-[22rem] bg-theme-color">
+    <div className="w-full text-white p-8 mt-12 min-h-[22rem] bg-theme-color">
       <div className="flex flex-col gap-4">
         <div className="grid grid-cols-1 gap-4 md:grid md:grid-cols-2 md:gap-6 md:justify-between lg:flex lg:gap-24">
           <div>
