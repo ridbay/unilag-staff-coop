@@ -16,14 +16,14 @@ const AboutLayout = ({ children }: { children: React.ReactNode }) => {
   return (
     <div className="min-h-[80vh] flex justify-center leading-[52px] py-[45px] p-[5vw]">
       <div className="md:max-w-[1000px] w-[95vw]">
-        <h1 className="text-[2rem] font-semibold">About Us</h1>
+        <h1 className="text-[2rem] font-semibold mb-[48px]">About Us</h1>
         <nav>
-          <ul className="flex flex-nowrap">
+          <ul className="flex flex-nowrap flex-col md:flex-row item-center md:items-stretch gap-2 md:gap-0">
             {aboutPaths.map((path, index) => (
-              <li key={index} className={`w-[${dynamicWidth}]  pb-[12px] ${
+              <li key={index} className={` w-full md:ww-[20%] pb-[12px] ${
                 router.pathname === path.link
-                  ? "border-b-[2px] border-blue-500"
-                  : "border-b border-black"
+                  ? "border-t-[2px] border-b-[2px] md:border-t-0 border-blue-500"
+                  : "md:border-b border-black"
               }`}>
                 <Link
                   href={path.link}
