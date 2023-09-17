@@ -22,8 +22,8 @@ import { RiArrowDownSLine } from "react-icons/ri";
 
 const pages = [
   { text: "About us", link: "/about-us" },
-  { text: "Product & Services", link: "/services" },
-  { text: "Resources", link: "/resources/downloads" },
+  { text: "Product & Services", link: "/products-services" },
+  { text: "Resources", link: "/resources/downloads"},
   { text: "Contact Us", link: "/contact-us" },
   { text: "Sign Up", link: "/sign-up" },
 ];
