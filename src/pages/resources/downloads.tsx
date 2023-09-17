@@ -45,9 +45,13 @@ const Downloads = () => {
     ),
   ];
 
-  return <div className="flex w-full justify-center mt-8">
-    <CustomizedTables data={rows} headers={headers1}/>
-  </div>;
+  return (
+    <div className="w-full h-[80vh] mt-8">
+      <div className="flex w-full h-full justify-center">
+        <CustomizedTables data={rows} headers={headers1} />
+      </div>
+    </div>
+  );
 };
 
 export default Downloads;

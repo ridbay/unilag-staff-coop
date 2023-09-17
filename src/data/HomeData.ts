@@ -4,6 +4,10 @@ import CreditScoreIcon from "@mui/icons-material/CreditScore";
 import Vision from "../../public/imgs/vision.jpg"
 import AlarmOnIcon from "@mui/icons-material/AlarmOn";
 import Aim from "../../public/imgs/aims.jpg"
+import NormalLoan from "../../public/imgs/normal-loan.webp"
+import EmergencyLoan2 from "../../public/imgs/emergency-loan.png"
+import HouseHoldLoan from "../../public/imgs/household-equipment-loan.png"
+import Sales from "../../public/imgs/sales.png"
 import LoyaltyIcon from "@mui/icons-material/Loyalty";
 import Operations from "../../public/imgs/operations.jpg"
 import {BsAlarm} from "react-icons/bs"
@@ -52,37 +56,37 @@ export const whoWeAreSectionData: whoWeAreSectionDataType = [
 
 export const CardContent = [
   {
-    icon: BsAlarm,
+    icon: NormalLoan,
     heading: "Normal Loan",
     content:
       "Members are eligible to normal loan facility of not more than 200% of their saving balance with a maximum repayment period of 24 months.",
   },
   {
-    icon: MdLoyalty,
+    icon: EmergencyLoan2,
     heading: "Household Equipment Loan",
     content:
       "“Members are eligible to equipment loan facility of not more than saving balance and NGN500,000 with a maximum repayment period of 9 months",
   },
   {
-    icon: MdLoyalty,
+    icon: HouseHoldLoan,
     heading: "Emergency Loan",
     content:
       "Members are entitled to emergency loan. Applications are subject to applicants' ability to payback within the stipulated period.",
   },
   {
-    icon: MdLoyalty,
+    icon: Sales,
     heading: "Commodity Sales",
     content:
       "Members are entitled to emergency loan. Applications are subject to applicants' ability to payback within the stipulated period.",
   },
   {
-    icon: MdLoyalty,
+    icon: Sales,
     heading: "AGM Sales",
     content:
       "Members are eligible to normal loan facility of not more than 200% of their saving balance with a maximum repayment period of 24 months",
   },
   {
-    icon: MdLoyalty,
+    icon: Sales,
     heading: "Advisory Services",
     content:
       "Members are eligible to normal loan facility of not more than 200% of their saving balance with a maximum repayment period of 24 months",

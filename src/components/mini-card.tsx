@@ -6,7 +6,7 @@ import { SvgIconTypeMap } from "@mui/material/SvgIcon/SvgIcon";
 import { IconType } from "react-icons/lib/esm/iconBase";
 
 type Props = {
-  icon: IconType;
+  icon: StaticImageData;
   heading: string;
   content: string;
 };
@@ -21,7 +21,7 @@ const MiniCard = ({ icon, heading, content }: Props) => {
   return (
     <div className="twoColTable h-[350px] max-w-[300px] rounded-3xl border-2 border-slate-100 bg-white p-4">
       <div className="mb-4 flex justify-center">
-        {icon}
+        <Image src={icon} alt="icons" className="w-[6rem] h-[6rem]"/>
       </div>
       <p className="mb-4 text-center text-[18px] font-semibold">{heading}</p>
       <p>{content}</p>
