@@ -22,7 +22,7 @@ const AboutLayout = ({ children }: { children: React.ReactNode }) => {
             {aboutPaths.map((path, index) => (
               <li key={index} className={` w-full md:ww-[20%] pb-[12px] ${
                 router.pathname === path.link
-                  ? "border-t-[2px] border-b-[2px] md:border-t-0 border-blue-500"
+                  ? "border-t-[2px] border-b-[2px] md:border-t-0 border-theme-color"
                   : "md:border-b border-black"
               }`}>
                 <Link

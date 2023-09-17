@@ -36,28 +36,22 @@ const Management = () => {
     desc: string;
   }>({ name: "", desc: "" });
 
-  useEffect(() => {
-    document.addEventListener("mousedown", handleChange);
-
-    return () => {
-      document.removeEventListener("mousedown", handleChange);
-    };
-  }, []);
-
-  const handleChange = () => {
-    // if (e.target.contains("modal")) {
+  const handleClose = (e: any) => {
+    if (isOpen) {
       setIsOpen(false);
-    // }
+    }
   };
 
   return (
     <>
-      <Modal isOpen={isOpen}>
-        <div>
-          <h2>{activeProfile.name}</h2>
-          <p>{activeProfile.desc}</p>
-        </div>
-      </Modal>
+      {isOpen && (
+        <Modal handleChange={() => handleClose(false)}>
+          <div>
+            <h2>{activeProfile.name}</h2>
+            <p>{activeProfile.desc}</p>
+          </div>
+        </Modal>
+      )}
       <AboutLayout>
         <div>
           <h1 className="text-[2rem]">Our Management</h1>
