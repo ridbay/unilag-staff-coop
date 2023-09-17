@@ -13,7 +13,7 @@ const raleway = Raleway({ subsets: ["latin"], weight: ["400", "700", "900"] });
 
 export default function App({ Component, pageProps }: AppProps) {
   return (
-    <div className={`${raleway.className}`}>
+    <div className={`${raleway.className} bg-[#fdfdfd0d]`}>
       <Head>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />

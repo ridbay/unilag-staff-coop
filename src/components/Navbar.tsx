@@ -32,6 +32,15 @@ const resources = [
   { text: "Downloads", link: "/resources/downloads" },
   { text: "FAQs", link: "/faqs" },
 ];
+const Mobilepages = [
+  { text: "About us", link: "/about-us" },
+  { text: "Product & Services", link: "/services" },
+  { text: "Events", link: "/events" },
+  { text: "Downloads", link: "/resources/downloads" },
+  { text: "FAQs", link: "/faqs" },
+  { text: "Contact Us", link: "/contact-us" },
+  { text: "Sign Up", link: "/sign-up" },
+];
 
 const Navbar = () => {
   const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(
@@ -101,6 +110,7 @@ const Navbar = () => {
                     if (page.text == "Resources") {
                       handleOpenNavMenu(e);
                     } else {
+                      router.push(page.link);
                       handleCloseNavMenu();
                     }
                   }}
@@ -110,18 +120,16 @@ const Navbar = () => {
                     display: "block",
                   }}
                 >
-                  <Link href={page.text === "Resources" ? "/" : page.link}>
-                    <Typography variant="h6">
-                      {page.text == "Resources" ? (
-                        <p className="flex items-center gap-1">
-                          {page.text}
-                          <RiArrowDownSLine size={30} />
-                        </p>
-                      ) : (
-                        <p>{page.text}</p>
-                      )}
-                    </Typography>
-                  </Link>
+                  <Typography variant="subtitle1">
+                    {page.text == "Resources" ? (
+                      <p className="flex items-center gap-1">
+                        {page.text}
+                        <RiArrowDownSLine size={30} />
+                      </p>
+                    ) : (
+                      <p>{page.text}</p>
+                    )}
+                  </Typography>
                 </Button>
               ))}
               <Menu
@@ -172,7 +180,7 @@ const Navbar = () => {
                 open={Boolean(anchorElUser)}
                 onClose={handleCloseUserMenu}
               >
-                {pages.map((page) => (
+                {Mobilepages.map((page) => (
                   <MenuItem key={page.text} onClick={handleCloseUserMenu}>
                     <Link href={page.link}>
                       <Typography textAlign="center">{page.text}</Typography>
