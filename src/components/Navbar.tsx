@@ -34,7 +34,7 @@ const resources = [
 ];
 const Mobilepages = [
   { text: "About us", link: "/about-us" },
-  { text: "Product & Services", link: "/services" },
+  { text: "Product & Services", link: "/products-services" },
   { text: "Events", link: "/events" },
   { text: "Downloads", link: "/resources/downloads" },
   { text: "FAQs", link: "/faqs" },

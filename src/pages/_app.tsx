@@ -25,8 +25,6 @@ export default function App({ Component, pageProps }: AppProps) {
           name="keywords"
           content="unilag, unique unilag, unilag cooperative,unilag staff, unique coop, society, unilag coop"
         />
-        <meta name="author" content="smepayroll.com.ng" />
-        <meta name="msvalidate.01" content="F888407967D370481E04A49F7E9D0E82" />
         <title>
           Official Page - Unique Unilag Staff Cooperative Multipurpose Society
         </title>

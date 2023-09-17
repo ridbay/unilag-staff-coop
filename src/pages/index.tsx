@@ -22,9 +22,9 @@ export default function Home() {
     <main className={`bg-[#fdfdfd0d] mb-12`}>
       <Carousel images={CarouselData} />
       <div className="py-[4rem] ">
-        <div className="pl-[4rem] mb-12">
-          <p className="text-[2rem] font-semibold">Membership</p>
-          <p className="max-w-[50rem] text-[1.5rem]">
+        <div className="md:pl-[4rem] pl-[2rem] mb-12">
+          <p className="text-[1.5rem] md:text-[2rem] font-semibold">Membership</p>
+          <p className="max-w-[50rem] text-[1rem] md:text-[1.5rem]">
             Membership is open to any staff member of the University of Lagos,
             on permanent appointment or whose appointment has been regularised
             by the University’s Governing Council.
@@ -39,7 +39,7 @@ export default function Home() {
           Who we are
         </p>
         <div className="flex justify-center w-full">
-          <p className="text-center max-w-[25rem] md:max-w-[45rem] md:text-[1.4rem] text-[1.2rem]">
+          <p className="text-center max-w-[25rem] md:max-w-[45rem] md:text-[1.4rem] text-[1rem]">
             We are a leading Cooperative Society in Nigeria with a world-class
             standard, impacting lives positively for a better future.
           </p>
