@@ -18,7 +18,7 @@ const Carousel: React.FC<CarouselProps> = ({ images }) => {
       setCurrentIndex((currentIndex + 1) % images.length);
     }, 5000);
     return () => clearInterval(changeImage);
-  }, [currentIndex]);
+  }, [currentIndex, images.length]);
 
   const nextSlide = () => {
     setCurrentIndex((currentIndex + 1) % images.length);
