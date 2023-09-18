@@ -30,7 +30,7 @@ const Downloads = () => {
   const rows = [
     createData(
       1,
-      "24th Annual General Meeting (AGM) Report",
+      "25th Annual General Meeting (AGM) Report",
       <FileDownload downloadLink="/pdf/unique-programme-2022.pdf" />
     ),
     createData(
