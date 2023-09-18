@@ -9,4 +9,4 @@ const AboutLayout = ({ Component, pageProps }: AppProps) => {
   );
 };
 
-// export default AboutLayout;
+
