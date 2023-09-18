@@ -14,6 +14,7 @@ const FileDownload = ({downloadLink}: FileDownloadType) => {
 }
 
 const Downloads = () => {
+
   function createData(
     id: number,
     name: string,
@@ -48,7 +49,7 @@ const Downloads = () => {
   return (
     <div className="w-full h-[80vh] mt-8">
       <div className="flex w-full h-full justify-center">
-        <CustomizedTables data={rows} headers={headers1} />
+        <CustomizedTables data={rows} headers={headers1} width="50%"/>
       </div>
     </div>
   );
