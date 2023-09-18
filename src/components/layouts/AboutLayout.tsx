@@ -14,8 +14,8 @@ const AboutLayout = ({ children }: { children: React.ReactNode }) => {
   const router = useRouter();
   const dynamicWidth = `${100 / aboutPaths.length}%`
   return (
-    <div className="min-h-[80vh] flex justify-center leading-[52px] py-[45px] p-[5vw]">
-      <div className="md:max-w-[1000px] w-[95vw]">
+    <div className="min-h-[80vh] flex justify-center py-[45px] px-4">
+      <div className="md:max-w-[1200px] w-[95vw]">
         <h1 className="text-[2rem] font-semibold mb-[48px]">About Us</h1>
         <nav>
           <ul className="flex flex-nowrap flex-col md:flex-row item-center md:items-stretch gap-2 md:gap-0">

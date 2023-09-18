@@ -8,7 +8,7 @@ type FileDownloadType = {
 const FileDownload = ({downloadLink}: FileDownloadType) => {
   return (
     <div className="bg-theme-color text-white text-center py-3 rounded-md">
-      <a href={downloadLink}>Download</a>
+      <a href={downloadLink} target="_blank" title="Unique management event">Download</a>
     </div>
   );
 }
@@ -31,7 +31,7 @@ const Downloads = () => {
     createData(
       1,
       "24th Annual General Meeting (AGM) Report",
-      <FileDownload downloadLink="#" />
+      <FileDownload downloadLink="/pdf/unique-programme-2022.pdf" />
     ),
     createData(
       2,
