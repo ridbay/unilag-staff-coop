@@ -1,17 +1,32 @@
-import React from 'react';
+import { useState } from "react";
+import { AiOutlinePlus } from "react-icons/ai";
+import { HiMiniMinusSmall } from "react-icons/hi2";
 
 interface FaqItemProps {
-    question?: string;
-    answer?: string;
+  question: string;
+  answer: string | React.ReactNode;
 }
 
 const FaqItem: React.FC<FaqItemProps> = ({ question, answer }) => {
-    return (
-        <div className='border border-[#00000031] rounded-[3px] p-5'>
-            <h1>What do we do?</h1>
-            <p>We are a Cooperative Society registered under the Lagos State Ministry of Commerce and Cooperatives to engage in cooperative activities such as granting of Loans to qualified members of the Society.</p>
-        </div>
-    );
+  const [isOpen, setIsOpen] = useState<boolean>(false);
+
+  return (
+    <>
+      <div className="flex justify-between items-center font-bold text-[1.2rem] border border-[#00000031] p-5 mt-5">
+        <h1 className="">{question}</h1>
+        <button onClick={() => setIsOpen((prevState) => !prevState)}>
+          {!isOpen ? <AiOutlinePlus /> : <HiMiniMinusSmall />}
+        </button>
+      </div>
+      <p
+        className={`faq ${
+          isOpen ? "open  py-5 mb-1" : "close"
+        } border border-[#00000031] px-5`}
+      >
+        {answer}
+      </p>
+    </>
+  );
 };
 
 export default FaqItem;
