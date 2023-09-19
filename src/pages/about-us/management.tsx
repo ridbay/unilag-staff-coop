@@ -2,20 +2,20 @@ import { useState, useEffect } from "react";
 
 import ManagementComponents from "@/components/about-components/ManagementComponent";
 import AboutLayout from "@/components/layouts/AboutLayout";
-import President from "../../../public/management/DR A A ADEBAYO - PRESIDENT (1).png"
-import VicePresident from "../../../public/management/ENGR. OLAWALE JOEL - VICE PRESIDENT.png"
-import Treasurer from "../../../public/management/MR A I OLALEYE - TREASURER.png"
-import GenSec from "../../../public/management/MR. FELIX O AKEJU - GENERAL SECRETARY.png"
-import AssGenSec from "../../../public/management/MRS O OLANREWAJU - ASSISTANT GENERAL SECRETARY.png"
-import ExOfficio from "../../../public/management/MR. A S TAIWO - EX-OFFICIO.png"
-import Member from "../../../public/management/MR T A ADEYEMI - MEMBER.png"
-import FinSec from "../../../public/management/MR. E O OLUYELU - FINANCIAL SECRETARY.png"
-import CreditChairman from "../../../public/management/MR GODSON NWANKWO - CHAIRMAN, CREDIT COMMITTEE.png"
-import Elder1 from "../../../public/management/ELDER O AJAO - ELDER IN COUNCIL.png"
-import Elder2 from "../../../public/management/ENGR. JOHNSON A. AKINWANDE - ELDER IN COUNCIL.png"
-import Elder3 from "../../../public/management/MR. BEN OLAOYE - ELDER IN COUNCIL.png"
-import Elder4 from "../../../public/management/MR K O KOLAWOLE - ELDER IN COUNCIL.png"
-import Elder5 from "../../../public/management/ENGR. JOHNSON A AJIBOYE - ELDER IN COUNCIL.png"
+import President from "../../../public/management/DR A A ADEBAYO - PRESIDENT (1).png";
+import VicePresident from "../../../public/management/ENGR. OLAWALE JOEL - VICE PRESIDENT.png";
+import Treasurer from "../../../public/management/MR A I OLALEYE - TREASURER.png";
+import GenSec from "../../../public/management/MR. FELIX O AKEJU - GENERAL SECRETARY.png";
+import AssGenSec from "../../../public/management/MRS O OLANREWAJU - ASSISTANT GENERAL SECRETARY.png";
+import ExOfficio from "../../../public/management/MR. A S TAIWO - EX-OFFICIO.png";
+import Member from "../../../public/management/MR T A ADEYEMI - MEMBER.png";
+import FinSec from "../../../public/management/MR. E O OLUYELU - FINANCIAL SECRETARY.png";
+import CreditChairman from "../../../public/management/MR GODSON NWANKWO - CHAIRMAN, CREDIT COMMITTEE.png";
+import Elder1 from "../../../public/management/ELDER O AJAO - ELDER IN COUNCIL.png";
+import Elder2 from "../../../public/management/ENGR. JOHNSON A. AKINWANDE - ELDER IN COUNCIL.png";
+import Elder3 from "../../../public/management/MR. BEN OLAOYE - ELDER IN COUNCIL.png";
+import Elder4 from "../../../public/management/MR K O KOLAWOLE - ELDER IN COUNCIL.png";
+import Elder5 from "../../../public/management/ENGR. JOHNSON A AJIBOYE - ELDER IN COUNCIL.png";
 import Modal from "../../components/Modal";
 import Image, { StaticImageData } from "next/image";
 
@@ -114,7 +114,7 @@ const Management = () => {
     desc: string;
     image: StaticImageData | string;
     position: string;
-  }>({ name: "", desc: "" , image: "", position: ""});
+  }>({ name: "", desc: "", image: "", position: "" });
 
   const handleClose = (e: any) => {
     if (isOpen) {
@@ -126,9 +126,7 @@ const Management = () => {
     <>
       {isOpen && (
         <Modal handleChange={() => handleClose(false)}>
-          <div
-            className="flex h-[calc(100vh_-_100px)] w-full"
-          >
+          <div className="flex h-[calc(100vh_-_100px)] w-full">
             <div className="w-2xl fixed z-30 mx-[10%] my-0 flex max-h-[calc(100dvh_-_1rem)] bg-white md:mx-[20%]">
               <div className="hidden basis-[50%] pr-12 md:block">
                 <Image
@@ -152,7 +150,9 @@ const Management = () => {
       )}
       <AboutLayout>
         <div>
-          <h1 className="text-[2rem] font-semibold pl-4">Our Management</h1>
+          <h1 className="text-[2rem] font-semibold pl-4 mb-[3rem] text-center md:text-left">
+            Our Management
+          </h1>
           <div className="flex justify-center w-full h-full">
             <div className="mt-[3rem] grid xl:grid-cols-4 md:grid-cols-2 gap-[2rem]">
               {MANAGEMENTS.map((management, index) => (
@@ -164,7 +164,7 @@ const Management = () => {
                       name: management.name,
                       desc: management.desc,
                       image: management.img,
-                      position: management.position
+                      position: management.position,
                     });
                     setIsOpen(true);
                   }}

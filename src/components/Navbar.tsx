@@ -28,7 +28,7 @@ const pages = [
   { text: "Sign Up", link: "/sign-up" },
 ];
 const resources = [
-  { text: "Events", link: "/events" },
+  { text: "Events", link: "/events/agm" },
   { text: "Downloads", link: "/resources/downloads" },
   { text: "FAQs", link: "/faqs" },
 ];
@@ -39,7 +39,7 @@ const authentication = [
 const Mobilepages = [
   { text: "About us", link: "/about-us" },
   { text: "Product & Services", link: "/products-services" },
-  { text: "Events", link: "/events" },
+  { text: "Events", link: "/events/agm" },
   { text: "Downloads", link: "/resources/downloads" },
   { text: "FAQs", link: "/faqs" },
   { text: "Contact Us", link: "/contact-us" },

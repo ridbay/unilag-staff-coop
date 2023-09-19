@@ -1,26 +1,27 @@
-import { PATH } from "@/routes/path";
-import Link from "next/link";
-import { useRouter } from "next/router";
+import { PATH } from '@/routes/path';
+import Link from 'next/link';
+import { useRouter } from 'next/router';
 
-const aboutPaths = [
-  { name: "About Us", link: PATH.aboutUs.root },
-  { name: "Mission & Vision", link: PATH.aboutUs.mission },
-  { name: "Trustees", link: PATH.aboutUs.trustees },
-  { name: "Management", link: PATH.aboutUs.management },
-  { name: "Past Presidents", link: PATH.aboutUs.pastPresidents },
-];
+interface EventsLayoutProps {
+  children: React.ReactNode;  
+}
 
-const AboutLayout = ({ children }: { children: React.ReactNode }) => {
-  const router = useRouter();
-  // const dynamicWidth = `${100 / aboutPaths.length}%`
+const eventsPaths = [
+    { name: "AGM", link: PATH.events.annualGeneralMeeting },
+    { name: "AFR", link: PATH.events.annualFinancialReport },
+  ];
+
+const EventsLayout: React.FC<EventsLayoutProps> = ({ children }) => {
+    const router = useRouter();
+  const dynamicWidth = `${100 / eventsPaths.length}%`
   return (
     <div className="min-h-[80vh] flex justify-center py-[45px] px-4">
       <div className="md:max-w-[1200px] w-[95vw]">
-        <h1 className="text-[2rem] font-semibold mb-[48px]">About Us</h1>
+        <h1 className="text-[2rem] font-semibold mb-[48px]">Events</h1>
         <nav>
           <ul className="flex flex-nowrap flex-col md:flex-row item-center md:items-stretch gap-2 md:gap-0">
-            {aboutPaths.map((path, index) => (
-              <li key={index} className={` w-full md:w-[20%] py-[12px] ${
+            {eventsPaths.map((path, index) => (
+              <li key={index} className={`w-full md:ww-[${dynamicWidth}] py-[12px] ${
                 router.pathname === path.link
                   ? "border-t-[2px] border-b-[2px] md:border-t-0 border-theme-color"
                   : "md:border-b border-black"
@@ -42,4 +43,4 @@ const AboutLayout = ({ children }: { children: React.ReactNode }) => {
   );
 };
 
-export default AboutLayout;
+export default EventsLayout;
