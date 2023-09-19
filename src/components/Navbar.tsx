@@ -25,7 +25,7 @@ const pages = [
   { text: "Product & Services", link: "/products-services" },
   { text: "Resources", link: "/resources/downloads"},
   { text: "Contact Us", link: "/contact-us" },
-  { text: "Sign Up", link: "/sign-up" },
+  { text: "Sign Up", link: "/sign-in/member-login" },
 ];
 const resources = [
   { text: "Events", link: "/events/agm" },
@@ -137,7 +137,7 @@ const Navbar = () => {
                   }}
                 >
                   <Typography variant="subtitle1">
-                    {page.text == "Resources" ? (
+                    {page.text == "Resources" || page.text == "Sign Up" ? (
                       <p className="flex items-center gap-1">
                         {page.text}
                         <RiArrowDownSLine size={30} />
