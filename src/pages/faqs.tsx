@@ -132,7 +132,7 @@ const ALL_FAQS = [
           be ready. However, members of the Credit Committee meet every Second
           Thursday of every Month to processes Normal Loan Application, while
           Household Equipment Loan is processed every Friday, regardless of when
-          it is submitted.{" "}
+          it is submitted.
         </p>
         <p>
           Nevertheless, there is room for an ‘Emergency’ Loan Application upon
@@ -217,7 +217,7 @@ const ALL_FAQS = [
 
 const FAQ = () => {
   return (
-    <section className="px-[3rem]">
+    <section className="px-[1rem] md:px-[3rem]">
       <h1 className="text-[2rem] font-semibold mb-[48px] text-center mt-[48px] flex flex-col justify-center items-center">
         <span>FAQ</span>
         <span className="block w-[3rem] h-1 bg-theme-color"></span>
