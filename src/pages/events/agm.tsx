@@ -1,7 +1,6 @@
 import CustomizedTables from "@/components/Table";
 import EventsLayout from "@/components/layouts/EventsLayout";
 
-const headers = [];
 
 const rows = [
   {
