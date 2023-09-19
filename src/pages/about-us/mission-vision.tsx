@@ -33,13 +33,18 @@ const Mission = () => {
     <AboutLayout>
       <div className="grid gap-5 md:gap-5">
         <>
+          <h1 className="text-[2rem] font-semibold pl-4 mb-[3rem] text-center md:text-left">
+            Mission & Vision
+          </h1>
           {allMissionDetails}
           <div className="mission_component">
             <h2 className="font-medium text-[1.5rem]">
               Objectives of the Cooperative Society
             </h2>
             <ol className="col-span-2 list-decimal">
-              <p className="font-semibold">As a staff-based co-operative society, our objectives are:</p>
+              <p className="font-semibold">
+                As a staff-based co-operative society, our objectives are:
+              </p>
               <li>To promote the economic interest of members;</li>
               <li>
                 To provide facilities for regular monthly savings without such

@@ -68,7 +68,7 @@ const ALL_FAQS = [
     answer: (
       <p>
         Yes. A person ceases to be a member of the Society if such a person
-        writes formally to the President requesting for{" "}
+        writes formally to the President requesting for 
         <strong>‘withdrawal of membership’</strong> from the Society.
         Subsequently, the University will stop the member’s deductions to the
         Society.

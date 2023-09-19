@@ -10,7 +10,7 @@ const TrusteesCard: React.FC<TrusteesCardProps> = ({name, desc}) => {
 
 
   return (
-    <div>
+      <div className="mb-[3rem]">
       <h2 className="font-bold text-[1.2rem]">{name}</h2>
       <div>
         <p className="inline">

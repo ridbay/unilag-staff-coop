@@ -9,7 +9,7 @@ interface ModalProps {
 const Backdrop: React.FC<ModalProps> = ({ children, handleChange }) => {
   return (
     <div
-      className={`fixed inset-10 z-10 backdrop-blur-sm overflow-hidden h-screen w-full flex items-center justify-center`}
+      className={`fixed inset-0 z-50 backdrop-blur-sm overflow-hidden h-screen w-full flex items-center justify-center bg-[#000000b9] px-3`}
       onClick={handleChange}
     >
       <div
@@ -25,7 +25,7 @@ const Backdrop: React.FC<ModalProps> = ({ children, handleChange }) => {
 const Modal: React.FC<ModalProps> = ({ children, handleChange }) => {
   return (
     <Backdrop handleChange={handleChange}>
-      <div className="bg-white  h-full w-full">{children}</div>
+      <div className="bg-white  h-full w-full rounded-[1rem]">{children}</div>
     </Backdrop>
   );
 };
