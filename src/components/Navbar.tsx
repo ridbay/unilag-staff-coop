@@ -32,6 +32,10 @@ const resources = [
   { text: "Downloads", link: "/resources/downloads" },
   { text: "FAQs", link: "/faqs" },
 ];
+const authentication = [
+  { text: "Member Login", link: "/sign-in/member-login" },
+  { text: "Admin Login", link: "/sign-in/admin-login" },
+];
 const Mobilepages = [
   { text: "About us", link: "/about-us" },
   { text: "Product & Services", link: "/products-services" },
@@ -49,6 +53,9 @@ const Navbar = () => {
   const [anchorElUser, setAnchorElUser] = React.useState<null | HTMLElement>(
     null
   );
+    const [anchorElLogin, setAnchorElLogin] = React.useState<null | HTMLElement>(
+      null
+    );
   const router = useRouter();
   const isActiveRoute = (route: any) => router.pathname === route;
 
@@ -62,6 +69,13 @@ const Navbar = () => {
 
   const handleCloseNavMenu = () => {
     setAnchorElNav(null);
+  };
+  const handleOpenLoginMenu = (event: React.MouseEvent<HTMLElement>) => {
+    setAnchorElLogin(event.currentTarget);
+  };
+
+  const handleCloseLoginMenu = () => {
+    setAnchorElLogin(null);
   };
 
   const handleCloseUserMenu = () => {
@@ -109,7 +123,9 @@ const Navbar = () => {
                   onClick={(e) => {
                     if (page.text == "Resources") {
                       handleOpenNavMenu(e);
-                    } else {
+                    } else if(page.text == "Sign Up"){
+                      handleOpenLoginMenu(e);
+                    }else {
                       router.push(page.link);
                       handleCloseNavMenu();
                     }
@@ -150,6 +166,30 @@ const Navbar = () => {
               >
                 {resources.map((page) => (
                   <MenuItem key={page.text} onClick={handleCloseNavMenu}>
+                    <Link href={page.link}>
+                      <Typography textAlign="center">{page.text}</Typography>
+                    </Link>
+                  </MenuItem>
+                ))}
+              </Menu>
+              <Menu
+                sx={{ mt: "45px" }}
+                id="menu-appbar"
+                anchorEl={anchorElLogin}
+                anchorOrigin={{
+                  vertical: "top",
+                  horizontal: "right",
+                }}
+                keepMounted
+                transformOrigin={{
+                  vertical: "top",
+                  horizontal: "right",
+                }}
+                open={Boolean(anchorElLogin)}
+                onClose={handleCloseLoginMenu}
+              >
+                {authentication.map((page) => (
+                  <MenuItem key={page.text} onClick={handleCloseLoginMenu}>
                     <Link href={page.link}>
                       <Typography textAlign="center">{page.text}</Typography>
                     </Link>

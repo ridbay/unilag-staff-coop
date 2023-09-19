@@ -7,6 +7,7 @@ import BackToTheTopButton from '@/components/BacktoTop'
 import Head from 'next/head'
 import { ThemeProvider } from "@mui/material/styles";
 import CssBaseline from "@mui/material/CssBaseline"; 
+import AuthService from '@/context/authContext'
 import { Lato, Raleway } from "next/font/google";
 
 const raleway = Raleway({ subsets: ["latin"], weight: ["400", "700", "900"] });
@@ -53,12 +54,14 @@ export default function App({ Component, pageProps }: AppProps) {
           content="https://www.linkedin.com/in/emmanuel-obiechina-341298235/"
         />
       </Head>
-      <ThemeProvider theme={theme}>
-        <BackToTheTopButton />
-        <Navbar />
-        <Component {...pageProps} />
-        <Footer />
-      </ThemeProvider>
+      <AuthService>
+        <ThemeProvider theme={theme}>
+          <BackToTheTopButton />
+          <Navbar />
+          <Component {...pageProps} />
+          <Footer />
+        </ThemeProvider>
+      </AuthService>
     </div>
   );
 }
