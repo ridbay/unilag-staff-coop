@@ -34,7 +34,6 @@ const AdminLogin = () => {
     e.preventDefault()
     try {
       await loginWithEmailAndPassword(adminLogin.email, adminLogin.password)
-      // router.push('/admin/home')
     } catch (error) {
       console.log(error)
     }
