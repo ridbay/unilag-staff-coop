@@ -39,7 +39,7 @@ const StyledTableRow = styled(TableRow)(({ theme }) => ({
 
 type TableProps = {
   data: Array<{ [key: string]: any }>;
-  headers: string[];
+  headers?: string[];
   width: string
 };
 
@@ -49,7 +49,7 @@ export default function CustomizedTables({ data, headers, width }: TableProps) {
       <Table aria-label="customized table">
         <TableHead>
           <TableRow>
-            {headers.map((header, index) => (
+            {headers?.map((header, index) => (
               <StyledTableCell key={index}>{header}</StyledTableCell>
             ))}
           </TableRow>
