@@ -49,7 +49,7 @@ const Downloads = () => {
   return (
     <div className="w-full h-[80vh] mt-8">
       <div className="flex w-full h-full justify-center">
-        <CustomizedTables data={rows} headers={headers1} width="50%"/>
+        <CustomizedTables data={rows} headers={headers1} width={{large: "50%", small: "95%"}}/>
       </div>
     </div>
   );

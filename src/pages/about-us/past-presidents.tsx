@@ -40,7 +40,7 @@ const PastPresidents = () => {
           of the Society. They are as follows in chronological order:
         </h2>
         <div className="mt-8">
-          <CustomizedTables headers={header} data={rows} width="100%" />
+          <CustomizedTables headers={header} data={rows} width={{large: "100%", small: "95%"}} />
         </div>
       </div>
     </AboutLayout>

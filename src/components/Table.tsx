@@ -40,12 +40,15 @@ const StyledTableRow = styled(TableRow)(({ theme }) => ({
 type TableProps = {
   data: Array<{ [key: string]: any }>;
   headers?: string[];
-  width: string
+  width: {
+    large: string;
+    small: string
+  }
 };
 
 export default function CustomizedTables({ data, headers, width }: TableProps) {
   return (
-    <TableContainer sx={{ width: {xs: "95%", md: `${width}`} }} component={Paper}>
+    <TableContainer sx={{ width: {xs: `${width.small}`, md: `${width.large}`} }} component={Paper}>
       <Table aria-label="customized table">
         <TableHead>
           <TableRow>

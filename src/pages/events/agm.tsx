@@ -33,7 +33,7 @@ const Agm = () => {
             <h2 className="text-center py-5 bg-theme-color">
               24TH ANNUAL GENERAL MEETING
             </h2>
-            <CustomizedTables data={rows} width="100%" />
+            <CustomizedTables data={rows} width={{large: "100%", small: "100%"}} />
           </div>
         </div>
       </section>
