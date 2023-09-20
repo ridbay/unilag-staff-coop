@@ -8,15 +8,16 @@ import Head from 'next/head'
 import { ThemeProvider } from "@mui/material/styles";
 import CssBaseline from "@mui/material/CssBaseline"; 
 import AuthService from '@/context/authContext'
-import { Lato, Raleway } from "next/font/google";
+import { Lato, Raleway, Mulish } from "next/font/google";
 
-const raleway = Raleway({ subsets: ["latin"], weight: ["400", "700", "900"] });
+const mulish = Mulish({ subsets: ["latin"], weight: ["400", "700", "900"] });
 
 export default function App({ Component, pageProps }: AppProps) {
   return (
-    <div className={`${raleway.className} bg-[#fdfdfd0d]`}>
+    <div className={`${mulish.className} bg-[#fdfdfd0d]`}>
       <Head>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <link href="https://fonts.googleapis.com/css?family=Mooli:regular" rel="stylesheet" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta
           name="description"

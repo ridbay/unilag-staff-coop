@@ -9,7 +9,7 @@ const theme = createTheme({
     // Add more custom colors if needed
   },
   typography: {
-    // Customize typography styles here
+    fontFamily: ["Mooli", "cursive"].join(","),
   },
 });
 
