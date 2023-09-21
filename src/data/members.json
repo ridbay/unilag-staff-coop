@@ -1,0 +1,28 @@
+[
+  {
+    "email": "admin@example.com",
+    "phonebook_no": "12326222",
+    "firstname": "Phiilip",
+    "lastname": "Adenuga",
+    "account_no": "2143470966",
+    "bank": "UBA",
+    "dividend_year": "2024",
+    "share_dividend": "0.00",
+    "non-share_dividend": "30.00",
+    "total_divivdend": "30.00",
+    "id": "001"
+  },
+  {
+    "email": "admin@example.com",
+    "phonebook_no": "12322222",
+    "firstname": "David",
+    "lastname": "Okunoye",
+    "account_no": "2143470966",
+    "bank": "UBA",
+    "dividend_year": "2024",
+    "share_dividend": "0.00",
+    "non-share_dividend": "30.00",
+    "total_divivdend": "30.00",
+    "id": "002"
+  }
+]

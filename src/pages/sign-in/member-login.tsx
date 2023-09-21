@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useAuth } from "@/context/authContext";
 import Image from "next/image";
 import InputLabel from "@mui/material/InputLabel";
 import OutlinedInput from "@mui/material/OutlinedInput";
@@ -13,15 +14,24 @@ import TextField from "@mui/material/TextField";
 
 const MemberLogin = () => {
   const [showPassword, setShowPassword] = useState(false);
+  const [memberLogin, setMemberLogin] = useState({ pass_no: "", password: "" });
+
 
   const handleClickShowPassword = () => setShowPassword((show) => !show);
 
+  const {MemberSignIn, currentUser} = useAuth();
   const handleMouseDownPassword = (
     event: React.MouseEvent<HTMLButtonElement>
   ) => {
     event.preventDefault();
   };
 
+  const handleSubmit = () => {
+    MemberSignIn(memberLogin.pass_no, memberLogin.password)
+    console.log(currentUser);
+  }
+
+ 
   return (
     <div className="h-[85vh]">
       <div className="flex justify-center flex-col h-full gap-4 items-center">
@@ -43,8 +53,10 @@ const MemberLogin = () => {
         <div className="flex flex-col gap-4 w-[92%] md:w-[50%] lg:w-[30%]">
           <TextField
             id="outlined-basic"
-            label="Email"
+            label="Pass Book Number"
             variant="outlined"
+            value={memberLogin.pass_no}
+            onChange={(e) => setMemberLogin({...memberLogin, pass_no: e.target.value})}
             required
           />
           <FormControl variant="outlined">
@@ -54,6 +66,8 @@ const MemberLogin = () => {
             <OutlinedInput
               id="outlined-adornment-password"
               type={showPassword ? "text" : "password"}
+              value={memberLogin.password}
+              onChange={(e) => setMemberLogin({...memberLogin, password: e.target.value})}
               endAdornment={
                 <InputAdornment position="end">
                   <IconButton
@@ -72,6 +86,7 @@ const MemberLogin = () => {
           <input
             type="submit"
             value="Sign In"
+            onClick={handleSubmit}
             className="bg-theme-color transition-all text-[18px] hover:bg-white hover:text-theme-color hover:border-2 hover:border-theme-color duration-500 ease-in-out text-white py-4 rounded-md cursor-pointer"
           />
         </div>
