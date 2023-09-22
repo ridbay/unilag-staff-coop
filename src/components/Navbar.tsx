@@ -43,7 +43,8 @@ const Mobilepages = [
   { text: "Downloads", link: "/resources/downloads" },
   { text: "FAQs", link: "/faqs" },
   { text: "Contact Us", link: "/contact-us" },
-  { text: "Sign Up", link: "/sign-up" },
+  { text: "Member Login", link: "/sign-in/member-login" },
+  { text: "Admin Login", link: "/sign-in/admin-login" },
 ];
 
 const Navbar = () => {
