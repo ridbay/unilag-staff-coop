@@ -10,12 +10,12 @@ interface ManagementComponentsProps {
 const ManagementComponents: React.FC<ManagementComponentsProps> = ({handleChange, name, image, position}) => {
 
   return (
-    <button className="cursor-pointer w-[15rem] h-[20rem]" onClick={handleChange}>
-      <div className="border-2 border-black w-[15rem] h-[15rem]">
+    <button className="cursor-pointer w-[18rem] h-[20rem] mb-8" onClick={handleChange}>
+      <div className="w-[18rem] h-[18rem]">
         <Image
           src={image}
           alt={name}
-          className=" w-[15rem] h-[15rem] object-center bg-no-repeat object-cover "
+          className=" w-[18rem] h-[18rem] object-center bg-no-repeat object-cover "
         />
       </div>
       {/* <Image src="https://robohash.org/gg" alt="name" width={70} height={70} /> */}

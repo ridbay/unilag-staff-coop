@@ -16,7 +16,7 @@ export default function Home() {
     { bgImg: "bg-carouselOne", text: "" },
     { bgImg: "bg-carouselTwo", text: "" },
     { bgImg: "bg-carouselThree", text: "" },
-    { bgImg: "bg-carouselFour", text: "" },
+    // { bgImg: "bg-carouselFour", text: "" },
   ];
   return (
     <main className={`bg-[#fdfdfd0d] mb-12`}>

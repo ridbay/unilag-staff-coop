@@ -12,9 +12,9 @@ const config: Config = {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
         "gradient-conic":
         "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
-        "carouselOne": "url('/imgs/carousel-img1.png')",
-        "carouselTwo": "url('/imgs/carousel-img2.png')",
-        "carouselThree": "url('/imgs/carousel-img3.png')",
+        "carouselOne": "url('/imgs/heroImg1.jpg')",
+        "carouselTwo": "url('/imgs/heroImg2.jpg')",
+        "carouselThree": "url('/imgs/heroImg3.jpg')",
         "carouselFour": "url('/imgs/carousel-img4.png')",
       },
       colors: {
