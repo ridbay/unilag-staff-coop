@@ -13,7 +13,11 @@ const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
   const CarouselData = [
-    { bgImg: "bg-carouselOne", text: "" },
+    {
+      bgImg: "bg-carouselOne",
+      text: "",
+      mobileImg: "bg-carouselOneMobile",
+    },
     { bgImg: "bg-carouselTwo", text: "" },
     { bgImg: "bg-carouselThree", text: "" },
     // { bgImg: "bg-carouselFour", text: "" },

@@ -7,6 +7,7 @@ interface CarouselProps {
   images: {
     bgImg: string;
     text: string;
+    mobileImg?: string
   }[];
 }
 
@@ -35,9 +36,7 @@ const Carousel: React.FC<CarouselProps> = ({ images }) => {
           key={index}
           className={`w-full text-white place-content-center ${
             currentIndex === index ? "translate-x-0" : ""
-          } leading-[156px] bg-no-repeat tracking-wide text-[10rem]  font-bold h-full ${
-            image.bgImg
-          } bg-cover bg-center`}
+          } leading-[156px] bg-no-repeat tracking-wide text-[10rem]  font-bold h-full ${image.mobileImg ? `lg:${image.mobileImg} ${image.bgImg}` : `${image.bgImg}`} bg-cover bg-center`}
           style={{ display: currentIndex == index ? "grid" : "none" }}
         >
           <p className="drop-shadow-2xl">{image.text}</p>
