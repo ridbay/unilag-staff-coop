@@ -11,6 +11,7 @@ import Visibility from "@mui/icons-material/Visibility";
 import MainLogo from "../../../public/imgs/main-logo.png";
 import UnilagLogo from "../../../public/imgs/unilag-logo.png";
 import TextField from "@mui/material/TextField";
+import { Toaster } from "react-hot-toast";
 
 const MemberLogin = () => {
   const [showPassword, setShowPassword] = useState(false);
@@ -34,6 +35,7 @@ const MemberLogin = () => {
  
   return (
     <div className="h-[85vh]">
+      <Toaster position="top-right" />
       <div className="flex justify-center flex-col h-full gap-4 items-center">
         <div className="flex gap-3">
           <Image
@@ -56,7 +58,9 @@ const MemberLogin = () => {
             label="Pass Book Number"
             variant="outlined"
             value={memberLogin.pass_no}
-            onChange={(e) => setMemberLogin({...memberLogin, pass_no: e.target.value})}
+            onChange={(e) =>
+              setMemberLogin({ ...memberLogin, pass_no: e.target.value })
+            }
             required
           />
           <FormControl variant="outlined">
@@ -67,7 +71,9 @@ const MemberLogin = () => {
               id="outlined-adornment-password"
               type={showPassword ? "text" : "password"}
               value={memberLogin.password}
-              onChange={(e) => setMemberLogin({...memberLogin, password: e.target.value})}
+              onChange={(e) =>
+                setMemberLogin({ ...memberLogin, password: e.target.value })
+              }
               endAdornment={
                 <InputAdornment position="end">
                   <IconButton

@@ -3,6 +3,7 @@ import { auth } from "@/lib/firebase";
 import React, { useContext, useState } from "react";
 import members from "../data/members.json";
 import { useRouter } from "next/router";
+import { ToastMessages } from "@/components/toastMessages";
 
 type ValueProp = {
   loginWithEmailAndPassword: (email: string, password: string) => Promise<void>;
@@ -52,10 +53,11 @@ const AuthService = ({ children }: any) => {
     });
     if (user) {
       setCurrentUser(user);
+      ToastMessages("Successfully Signed In", false)
       router.push("/members/home")
       // throw new Error("Invalid email or password");
     }else {
-      return
+      ToastMessages("Incorrect Login credentials", true)
     }
   };
   return (

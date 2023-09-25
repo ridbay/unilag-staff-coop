@@ -25,7 +25,7 @@ const pages = [
   { text: "Product & Services", link: "/products-services" },
   { text: "Resources", link: "/resources/downloads"},
   { text: "Contact Us", link: "/contact-us" },
-  { text: "Sign Up", link: "/sign-in/member-login" },
+  { text: "Sign In", link: "/sign-in/member-login" },
 ];
 const resources = [
   { text: "Events", link: "/events/agm" },
@@ -124,7 +124,7 @@ const Navbar = () => {
                   onClick={(e) => {
                     if (page.text == "Resources") {
                       handleOpenNavMenu(e);
-                    } else if(page.text == "Sign Up"){
+                    } else if(page.text == "Sign In"){
                       handleOpenLoginMenu(e);
                     }else {
                       router.push(page.link);
@@ -138,7 +138,7 @@ const Navbar = () => {
                   }}
                 >
                   <Typography variant="subtitle1">
-                    {page.text == "Resources" || page.text == "Sign Up" ? (
+                    {page.text == "Resources" || page.text == "Sign In" ? (
                       <p className="flex items-center gap-1">
                         {page.text}
                         <RiArrowDownSLine size={30} />

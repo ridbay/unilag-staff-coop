@@ -30,7 +30,7 @@ const Carousel: React.FC<CarouselProps> = ({ images }) => {
   };
 
   return (
-    <div className="relative h-[43rem] transition-transform duration-1000 ease-in-out">
+    <div className="relative h-[34rem] md:h-[39rem] transition-transform duration-1000 ease-in-out">
       {images.map((image, index) => (
         <div
           key={index}

@@ -9,7 +9,7 @@ const MembersPage = () => {
 
     return (
       <div className="p-6">
-        <div>
+        <div className="md:pl-8 lg:pl-0">
           <p className="text-[21px] font-semibold pb-4">Welcome {currentUser?.firstname}</p>
         </div>
         <div>
@@ -17,7 +17,7 @@ const MembersPage = () => {
             <h1 className="md:w-[32rem] w-[100%] text-center rounded-sm text-[1.5rem] font-semibold py-6 bg-green-400 text-white">
               Dividends
             </h1>
-            <div className="grid p-6 lg:grid-cols-4 md:grid-cols-2 md:w-auto w-[20rem] grid-cols-1 xl:gap-24 md:gap-20 gap-16 border-2 border-slate-100 shadow-md">
+            <div className="grid p-6 lg:grid-cols-4 md:grid-cols-3 md:w-auto w-[20rem] grid-cols-1 xl:gap-24 md:gap-20 gap-16 border-2 border-slate-100 shadow-md">
               <div className="border-b-2 sm:border-b-0 border-b-slate-100 pb-2">
                 <p className="text-[18px] mb-2">First Name</p>
                 <p className="font-bold text-[21px]">
@@ -81,7 +81,7 @@ const MembersPage = () => {
                 </p>
               </div>
             </div>
-            <div className="w-full flex justify-start">
+            <div className="w-full flex justify-start md:justify-center">
               <button
                 className="bg-theme-color text-white py-4 px-6 rounded-md"
                 onClick={() => {
