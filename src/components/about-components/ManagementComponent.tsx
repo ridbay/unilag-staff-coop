@@ -10,7 +10,7 @@ interface ManagementComponentsProps {
 const ManagementComponents: React.FC<ManagementComponentsProps> = ({handleChange, name, image, position}) => {
 
   return (
-    <button className="cursor-pointer w-[18rem] h-[20rem] mb-8" onClick={handleChange}>
+    <button className="cursor-pointer w-[18rem] h-[20rem] mb-12" onClick={handleChange}>
       <div className="w-[18rem] h-[18rem]">
         <Image
           src={image}

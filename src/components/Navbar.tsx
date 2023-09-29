@@ -16,7 +16,7 @@ import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
 import AdbIcon from "@mui/icons-material/Adb";
 import MenuSharpIcon from "@mui/icons-material/MenuSharp";
-import UnilagLogo from "../../public/imgs/unilag-logo.png";
+import UnilagLogo from "../../public/imgs/unilag-logo.jpg";
 import MainLogo from "../../public/imgs/main-logo.png";
 import { RiArrowDownSLine } from "react-icons/ri";
 

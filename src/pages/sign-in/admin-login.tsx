@@ -10,7 +10,7 @@ import IconButton from "@mui/material/IconButton"
 import FormControl from "@mui/material/FormControl";
 import Visibility from "@mui/icons-material/Visibility";
 import MainLogo from "../../../public/imgs/main-logo.png"
-import UnilagLogo from "../../../public/imgs/unilag-logo.png"
+import UnilagLogo from "../../../public/imgs/unilag-logo.jpg"
 import TextField from "@mui/material/TextField"
 
 
