@@ -21,9 +21,10 @@ import MainLogo from "../../public/imgs/main-logo.png";
 import { RiArrowDownSLine } from "react-icons/ri";
 
 const pages = [
+  { text: "Home", link: "/" },
   { text: "About us", link: "/about-us" },
   { text: "Product & Services", link: "/products-services" },
-  { text: "Resources", link: "/resources/downloads"},
+  { text: "Resources", link: "/resources/downloads" },
   { text: "Contact Us", link: "/contact-us" },
   { text: "Sign In", link: "/sign-in/member-login" },
 ];
@@ -37,6 +38,7 @@ const authentication = [
   { text: "Admin Login", link: "/sign-in/admin-login" },
 ];
 const Mobilepages = [
+  { text: "Home", link: "/" },
   { text: "About us", link: "/about-us" },
   { text: "Product & Services", link: "/products-services" },
   { text: "Events", link: "/events/agm" },
