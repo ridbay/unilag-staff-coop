@@ -69,7 +69,7 @@ const MemberLogin = () => {
             </InputLabel>
             <OutlinedInput
               id="outlined-adornment-password"
-              type={showPassword ? "text" : "password"}
+              type={showPassword ? "number" : "password"}
               value={memberLogin.password}
               onChange={(e) =>
                 setMemberLogin({ ...memberLogin, password: e.target.value })

@@ -93,7 +93,7 @@ const MANAGEMENTS = [
     desc: "",
   },
   {
-    name: "Dr (barr) Idriss Odekunle",
+    name: "Dr (barr) Idris Odekunle",
     position: "Management Member",
     img: Member2,
     desc: `Dr. Idris Odekunle is a law lecturer in the Department of Private and Property Law, Faculty of Law, University of Lagos. He got his LL.B. Degree (Second Class Upper) from the University of Lagos in 1996. He was a winner of the University of Lagos Best Student and University Scholar Award in 1994/1995 Academic Session. He was called to the Nigerian Bar in 1998. He obtained his LL.M from Obafemi Awolowo University, Ile- Ife in 2004 and further acquired another LL.M. from the University of London in 2012. He concluded his Ph.D. in Private and Property Law from University of Lagos, in 2022. He is a Fellow of the Chartered Institute of Taxation of Nigeria since 2011, became an Associate of Institute of Chartered Secretaries and Administrators of Nigeria (ICSAN) in 2022 and an Associate of the Nigerian Institute of Management in 2003. He passed the Associateship Examinations of the Chartered Institute of Arbitrators (UK) in 2005. He has over 25 years of cognate experience spanning through active legal practice, corporate experience, and lecturing. He was Legal Counsel in the Law Firm of G. Elias & Co of No. 5, Broad Street Lagos between 1999-2003 and a Manager in the Legal Services Department of the UACN Plc of No. 1/5, Odunlami Street Lagos from 2004-2011 when he resigned to set up his Legal Practice (Acme Solicitors) and, in addition, took up lecturing appointment at the University of Lagos in the same year. He has since then to date been combining legal practice with lecturing.`,

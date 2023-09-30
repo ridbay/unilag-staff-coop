@@ -1,15 +1,26 @@
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { auth } from "@/lib/firebase";
-import React, { useContext, useState } from "react";
+import React, { useContext, useState, useEffect } from "react";
 import members from "../data/members.json";
 import { useRouter } from "next/router";
 import { ToastMessages } from "@/components/toastMessages";
+import { db } from "../lib/firebase";
+import {
+  query,
+  getDocs,
+  collection,
+  where,
+  addDoc,
+  doc,
+  setDoc,
+} from "firebase/firestore";
 
 type ValueProp = {
   loginWithEmailAndPassword: (email: string, password: string) => Promise<void>;
-  MemberSignIn: (pass_no: string, password: string) => void;
+  MemberSignIn: (pass_no: string, password: number | string) => void;
   currentUser: User | null;
   setCurrentUser: React.Dispatch<React.SetStateAction<User | null>>;
+  membersData: any
 };
 
 type User = {
@@ -24,15 +35,28 @@ type User = {
   "non-share_dividend": string;
   total_divivdend: string;
   id: string;
-};
+  };
 
 const AuthContext = React.createContext({} as ValueProp);
 
 const AuthService = ({ children }: any) => {
 
   const [currentUser, setCurrentUser] = useState<User | null>(null)
+  const [membersData, setMembersData] = useState<any>([])
 
     const router = useRouter()
+
+    const handleFetchDocs = async() => {
+       const docRef = collection(db, "members");
+       const docSnap = await getDocs(docRef);
+       docSnap.forEach((res) => {
+        setMembersData(res.data()?.data)
+        console.log(res.data())});
+    }
+
+    useEffect(() => {
+     handleFetchDocs()
+    },[])
 
   const loginWithEmailAndPassword = async (email: string, password: string) => {
     try {
@@ -43,11 +67,13 @@ const AuthService = ({ children }: any) => {
     }
   };
 
-  const MemberSignIn = (pass_no: string, password: string) => {
-    const user = members.find((user) => {
-      const emailFound = pass_no === user.phonebook_no;
+  const MemberSignIn = (pass_no: string, password: string | number) => {
+      const user = membersData.find((user: any) => {
+        console.log(user)
+      const emailFound = pass_no.toLowerCase() == user.NAME.toLowerCase();
       const isPasswordCorrect =
-        password.toLowerCase() === user.lastname.toLowerCase();
+        password == user["ID "];
+        console.log(password, user["ID "])
       const userFound = emailFound && isPasswordCorrect;
       return userFound;
     });
@@ -61,7 +87,15 @@ const AuthService = ({ children }: any) => {
     }
   };
   return (
-    <AuthContext.Provider value={{ loginWithEmailAndPassword, MemberSignIn, currentUser, setCurrentUser}}>
+    <AuthContext.Provider
+      value={{
+        loginWithEmailAndPassword,
+        MemberSignIn,
+        currentUser,
+        setCurrentUser,
+        membersData,
+      }}
+    >
       {children}
     </AuthContext.Provider>
   );

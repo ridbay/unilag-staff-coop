@@ -1,9 +1,11 @@
 import { useAuth } from "@/context/authContext";
 import { useRouter } from "next/router";
 
+
 const MembersPage = () => {
 
     const router = useRouter()
+
 
     const {currentUser, setCurrentUser} = useAuth()
 
