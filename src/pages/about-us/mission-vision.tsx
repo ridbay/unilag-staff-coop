@@ -45,24 +45,26 @@ const Mission = () => {
               <p className="font-semibold">
                 As a staff-based co-operative society, our objectives are:
               </p>
-              <li>To promote the economic interest of members;</li>
-              <li>
+              <li className="ml-2">
+                To promote the economic interest of members;
+              </li>
+              <li className="ml-2">
                 To provide facilities for regular monthly savings without such
                 savings being removed from their control;
               </li>
-              <li>
+              <li className="ml-2">
                 To create funds to be lent to members at fair and reasonable
                 interest rates for productive purposes;
               </li>
-              <li>
+              <li className="ml-2">
                 To provide any other measures designed on cooperative statutes
                 and principles;
               </li>
-              <li>
+              <li className="ml-2">
                 To encourage among members the spirit and practice of savings,
                 mutual help and self-help;
               </li>
-              <li>
+              <li className="ml-2">
                 To provide mortgage facility to members through generation of
                 funds from shares, etc
               </li>
