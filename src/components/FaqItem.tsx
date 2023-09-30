@@ -18,13 +18,23 @@ const FaqItem: React.FC<FaqItemProps> = ({ question, answer }) => {
           {!isOpen ? <AiOutlinePlus /> : <HiMiniMinusSmall />}
         </button>
       </div>
-      <p
-        className={`faq ${
-          isOpen ? "open  py-5 mb-1" : "close"
-        } border border-[#00000031] px-5`}
-      >
-        {answer}
-      </p>
+      {typeof answer === "string" ? (
+        <p
+          className={`faq ${
+            isOpen ? "open  py-5 mb-1" : "close"
+          } border border-[#00000031] px-5`}
+        >
+          {answer}
+        </p>
+      ) : (
+        <div
+          className={`faq ${
+            isOpen ? "open  py-5 mb-1" : "close"
+          } border border-[#00000031] px-5`}
+        >
+          {answer}
+        </div>
+      )}
     </>
   );
 };
