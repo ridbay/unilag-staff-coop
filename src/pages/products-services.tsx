@@ -1,7 +1,5 @@
-import Image from "next/image";
 import React from "react";
 
-import ProductImage from "../../public/imgs/our services.jpeg";
 import ProductsCard from "@/components/ProductsCard";
 
 interface ProductsAndServicesProps {}
@@ -15,12 +13,21 @@ const SERVICES = [
     name: "HOUSEHOLD EQUIPMENT LOAN",
     desc: "A registered member of the Society, whose deductions have been consistently remitted to the Society for a period of not less than six (6) months after registration, is eligible to apply for a 'Household Equipment Loan' facility of NOT MORE THAN Five Hundred Thousand Naira Only (N500,000.00), nor can it be above the applicant’s Savings Balance as at the time of applying for such loan. This is also PROVIDED that the applicant’s salary, excluding overtime and all deductions, is able to repay back the Principal Amount and the ten percent (10%) Interest Rate within a maximum period of not more nine (9) months. In addition, it is mandatory that after all deductions there must be a minimum ‘Take Home’ of Ten Thousand Naira (N10,000:00) for Senior Staff and Five Thousand Naira (5,000:00) for Junior Staff. Similarly, applicants shall provide two (2) guarantors who must also be members of the Society. In conclusion, the completed application form, which costs One Hundred and Fifty Naira Only (N150:00), payable to the bank, will have to be examined and approved by the 'Household Equipment Loan' Committee, within five (5) working days, in accordance with the relevant Bye-Laws guiding the granting of loans.",
   },
-  { name: "EMERGENCY LOAN", desc: "Emergency loan" },
+  {
+    name: "EMERGENCY LOAN",
+    desc: "Loans treated before and after the mandatory credit committee meeting held every second Thursday of the month. Such loans attract a token as processing fee.",
+  },
 ];
 
 const PRODUCTS = [
-  { name: "PERIODIC COMMODITY SALES", desc: "Periodic Commodity Sales" },
-  { name: "AGM SALES", desc: "" },
+  {
+    name: "PERIODIC COMMODITY SALES",
+    desc: "These are consumables provided to members (rice, vegetable oil, palm oil etc) at purchase price.",
+  },
+  {
+    name: "AGM SALES",
+    desc: "Products exhibited at the society's Annual General Meeting are supplied to interested members. The products are to be paid for over a period of 9months.",
+  },
 ];
 
 const ProductsAndServices: React.FC<ProductsAndServicesProps> = ({}) => {
