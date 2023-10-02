@@ -50,11 +50,17 @@ const AuthService = ({ children }: any) => {
     const router = useRouter()
 
     const handleFetchDocs = async() => {
-       const docRef = collection(db, "members");
-       const docSnap = await getDocs(docRef);
-       docSnap.forEach((res) => {
-        setMembersData(res.data()?.data)
-        console.log(res.data())});
+      try {
+         const docRef = collection(db, "members");
+         const docSnap = await getDocs(docRef);
+         docSnap.forEach((res) => {
+           setMembersData(res.data()?.data);
+           console.log(res.data());
+         });
+      } catch (error) {
+        ToastMessages("Network error", true)
+      }
+      
     }
 
     useEffect(() => {
