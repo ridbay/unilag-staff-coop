@@ -114,7 +114,16 @@ const MANAGEMENTS = [
     name: "MR A S TAIWO",
     position: "EX OFFICIO",
     img: ExOfficio,
-    desc: "",
+    desc: `Alabi Sunday TAIWO was the Treasurer of Unique Unilag Staff Multipurpose Cooperative Society Limited, a trustee and Member of the Management Committee of the Society. 
+    He was elected as the financial secretary (2014-2018) and Treasurer (2018-2022) .He has also served the University of Lagos Community in various capacities. 
+    Taiwo served the University of Lagos in various departments in his professional capacity as an accountant: 
+    a. Head of account unit University of Lagos Bookshop – 2005 -2013
+    b. Head of account unit, University of Lagos Consult limited  - 2013 -2017
+    c. Chief accountant and Head of account unit, University Research Management Office – 2017 to date.
+    d. Member of Management, University of Lagos Bursary
+    Taiwo holds a Bachelor’s of Science (B.Sc.) Degree, from the prestigious University of Lagos. He had been an Associate Chartered Account (ACA), Institute of Chartered Accountant of Nigeria (ICAN), since 2007.
+    He is presently serving the University of Lagos as head of account at the Research Management office.
+    He is happily married with three children.`,
   },
   {
     name: "Mrs Abeke Olanrewaju Adeoye",

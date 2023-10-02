@@ -20,7 +20,9 @@ type ValueProp = {
   MemberSignIn: (pass_no: string, password: number | string) => void;
   currentUser: User | null;
   setCurrentUser: React.Dispatch<React.SetStateAction<User | null>>;
-  membersData: any
+  membersData: any;
+  setLoading: React.Dispatch<React.SetStateAction<boolean>>;
+  loading: boolean
 };
 
 type User = {
@@ -43,6 +45,7 @@ const AuthService = ({ children }: any) => {
 
   const [currentUser, setCurrentUser] = useState<User | null>(null)
   const [membersData, setMembersData] = useState<any>([])
+  const [loading, setLoading] = useState(false)
 
     const router = useRouter()
 
@@ -94,6 +97,8 @@ const AuthService = ({ children }: any) => {
         currentUser,
         setCurrentUser,
         membersData,
+        loading,
+        setLoading
       }}
     >
       {children}

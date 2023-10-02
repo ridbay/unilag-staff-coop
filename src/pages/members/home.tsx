@@ -9,6 +9,8 @@ const MembersPage = () => {
 
     const {currentUser, setCurrentUser} = useAuth()
 
+    
+
     return (
       <div className="p-6">
         <div className="md:pl-8 lg:pl-0">
