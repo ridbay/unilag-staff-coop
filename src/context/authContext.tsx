@@ -26,17 +26,12 @@ type ValueProp = {
 };
 
 type User = {
-  email: string;
-  phonebook_no: string;
-  firstname: string;
-  lastname: string;
-  account_no: string;
-  bank: string;
-  dividend_year: string;
-  share_dividend: string;
-  "non-share_dividend": string;
-  total_divivdend: string;
-  id: string;
+  FULLNAME: string;
+  PBNo: string;
+  Dividend: string;
+  entertainment: string;
+  shares: string;
+  Total: string;
   };
 
 const AuthContext = React.createContext({} as ValueProp);
@@ -77,12 +72,12 @@ const AuthService = ({ children }: any) => {
   };
 
   const MemberSignIn = (pass_no: string, password: string | number) => {
-      const user = membersData.find((user: any) => {
+      const user = membersData.find((user: User) => {
         console.log(user)
-      const emailFound = pass_no.toLowerCase() == user.NAME.toLowerCase();
+      const emailFound = pass_no.toLowerCase() == user.FULLNAME.toLowerCase();
       const isPasswordCorrect =
-        password == user["ID "];
-        console.log(password, user["ID "])
+        password == user.PBNo;
+        // console.log(password, user["ID "])
       const userFound = emailFound && isPasswordCorrect;
       return userFound;
     });
