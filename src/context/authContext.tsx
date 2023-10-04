@@ -1,4 +1,4 @@
-import { signInWithEmailAndPassword } from "firebase/auth";
+import { signInWithEmailAndPassword, signOut } from "firebase/auth";
 import { auth } from "@/lib/firebase";
 import React, { useContext, useState, useEffect } from "react";
 import members from "../data/members.json";
@@ -22,72 +22,82 @@ type ValueProp = {
   setCurrentUser: React.Dispatch<React.SetStateAction<User | null>>;
   membersData: any;
   setLoading: React.Dispatch<React.SetStateAction<boolean>>;
-  loading: boolean
+  loading: boolean;
+  AdminSignOut: () => void;
 };
 
 type User = {
-  FULLNAME: string;
+  " FULL NAME ": string;
   PBNo: string;
-  Dividend: string;
-  entertainment: string;
-  shares: string;
-  Total: string;
-  };
+  DIVIDENDS: string;
+  ENTERTAINMENT: string;
+  SHARES: string;
+  TOTAL: string;
+};
 
 const AuthContext = React.createContext({} as ValueProp);
 
 const AuthService = ({ children }: any) => {
+  const [currentUser, setCurrentUser] = useState<User | null>(null);
+  const [membersData, setMembersData] = useState<any>([]);
+  const [loading, setLoading] = useState(false);
 
-  const [currentUser, setCurrentUser] = useState<User | null>(null)
-  const [membersData, setMembersData] = useState<any>([])
-  const [loading, setLoading] = useState(false)
+  const router = useRouter();
 
-    const router = useRouter()
-
-    const handleFetchDocs = async() => {
-      try {
-         const docRef = collection(db, "members");
-         const docSnap = await getDocs(docRef);
-         docSnap.forEach((res) => {
-           setMembersData(res.data()?.data);
-           console.log(res.data());
-         });
-      } catch (error) {
-        ToastMessages("Network error", true)
-      }
-      
+  const handleFetchDocs = async () => {
+    try {
+      const docRef = collection(db, "members");
+      const docSnap = await getDocs(docRef);
+      docSnap.forEach((res) => {
+        setMembersData(res.data()?.data);
+        console.log(res.data());
+      });
+    } catch (error) {
+      ToastMessages("Network error", true);
     }
+  };
 
-    useEffect(() => {
-     handleFetchDocs()
-    },[])
+  useEffect(() => {
+    handleFetchDocs();
+  }, []);
 
   const loginWithEmailAndPassword = async (email: string, password: string) => {
     try {
       await signInWithEmailAndPassword(auth, email, password);
-      router.push("/admin/home")
+      ToastMessages("Successfully Signed In", false)
+      router.push("/admin/home");
     } catch (error: any) {
       console.log(error.message);
+      ToastMessages("Invalid Login Credentials", true)
     }
   };
 
+  const AdminSignOut = () => {
+    try {
+      signOut(auth)
+      router.push("/sign-in/admin-login")
+    } catch (error) {
+      ToastMessages("An error occured", true)
+    }
+  }
+
   const MemberSignIn = (pass_no: string, password: string | number) => {
-      const user = membersData.find((user: User) => {
-        console.log(user)
-      const emailFound = pass_no.toLowerCase() == user.FULLNAME.toLowerCase();
-      const isPasswordCorrect =
-        password == user.PBNo;
-        // console.log(password, user["ID "])
+    const user = membersData.find((user: User) => {
+      console.log(user);
+      const surname = user[" FULL NAME "].split(" ");
+      const emailFound = pass_no.toLowerCase() == user.PBNo;
+      const isPasswordCorrect = password == surname[0].toLowerCase();
+      // console.log(password, user["ID "])
       const userFound = emailFound && isPasswordCorrect;
       return userFound;
     });
     if (user) {
       setCurrentUser(user);
-      ToastMessages("Successfully Signed In", false)
-      router.push("/members/home")
+      ToastMessages("Successfully Signed In", false);
+      router.push("/members/home");
       // throw new Error("Invalid email or password");
-    }else {
-      ToastMessages("Incorrect Login credentials", true)
+    } else {
+      ToastMessages("Incorrect Login credentials", true);
     }
   };
   return (
@@ -97,9 +107,10 @@ const AuthService = ({ children }: any) => {
         MemberSignIn,
         currentUser,
         setCurrentUser,
+        AdminSignOut,
         membersData,
         loading,
-        setLoading
+        setLoading,
       }}
     >
       {children}
@@ -112,3 +123,7 @@ export default AuthService;
 export const useAuth = () => {
   return useContext(AuthContext);
 };
+
+
+// AJIBOYe
+// 

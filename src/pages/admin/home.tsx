@@ -24,7 +24,7 @@ interface excel {
 }
 const AdminHome = () => {
   const [excel, setExcel] = useState<File | null>(null);
-  const {loading, setLoading} = useAuth()
+  const { loading, setLoading, AdminSignOut } = useAuth();
 
 
    function parseExcelData(file: any) {
@@ -101,6 +101,17 @@ const AdminHome = () => {
           </section>
         )}
       </Dropzone>
+
+      <div className="w-full flex justify-start mt-6">
+        <button
+          className="bg-theme-color text-white py-4 px-6 rounded-md"
+          onClick={() => {
+            AdminSignOut()
+          }}
+        >
+          Log Out
+        </button>
+      </div>
       {/* <input
         type="file"
         onChange={(e) => {

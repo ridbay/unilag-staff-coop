@@ -12,6 +12,7 @@ import Visibility from "@mui/icons-material/Visibility";
 import MainLogo from "../../../public/imgs/main-logo.png"
 import UnilagLogo from "../../../public/imgs/unilag-logo.jpg"
 import TextField from "@mui/material/TextField"
+import { Toaster } from "react-hot-toast";
 
 
 
@@ -41,6 +42,7 @@ const AdminLogin = () => {
 
   return (
     <div className="h-[85vh]">
+      <Toaster position="top-right"/>
       <div className="flex justify-center flex-col h-full gap-4 items-center">
         <div className="flex gap-3">
           <Image

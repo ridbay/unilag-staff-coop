@@ -59,8 +59,15 @@ const MANAGEMENTS = [
     name: "Mr Ademola Yekeen Adewuyi",
     position: "Immediate Past President",
     img: IPP,
-    desc: `Adewuyi Yekeen Ademola is the Immediate Past President of the Unique Unilag CMS,Ltd.He has been an Elected Co-operator,virtually in all the Executive Capacities Positions of the Cooperative Movement Activities in the Society. He holds HND in Accountancy and Finance, Bachelor of Science Degree in Accounting, Master of Business Administration, Fellow Chartered Institute of Loan and Risk Management and Certified Member of National Accountants of Nigeria (CNA).
-    He is the current Vice President of the Lagos mainland Multipurpose Cooperative Union and the appointed Chairman by the LASCOFED, Membership Drive Committee, Mainland Area. Adewuyi Yekeen Ademola is a recipient of the "Most Outstanding Cooperative Leader Award "International Cooperative Day,2023.This followed the outstanding contributions to the development of the Cooperative Movement of the Lagos State.`,
+    desc: `Yekeen Ademola ADEWUYI is the immediate Past President of Unique Unilag Staff Cooperative Multipurpose Society Limited. He was elected as the President at the 2018 Annual General Meeting (AGM) of the Society, a position he occupied till 2022. He had served the Society in various capacities, as the Chairman, Supervisory Committee (2006-2010), the Treasurer, ( 2010-2014.) and as well as the Vice President (2014-2018).
+    Adewuyi has also served the University of Lagos Community at several forums in his capacity as an Accountant. In 2005, he was appointed as the Auditor of the Senior Staff Association of Nigerian Universities (SSANU, Unilag Branch) and SSANU Contributory Welfare Scheme in 2009 respectively. He has been of great assets to the Cooperative Society in the area of Estate Management and Development. In addition, he served the Unilag Muslim Community as a financial coordinator of ISL and DLI from 2013 -2018 just to mention a few.
+    He holds a Bachelors of Science Degree in Accountancy, a Masters of Business Administration (MBA) Degree, in 2004, from the University of Ado-Ekiti, Ado-Ekiti, Ekiti State and also awarded a Higher National Diploma (HND) by the prestigious Yaba College of Technology, Yaba-Lagos, in Accountancy and Finance in the year 1995. Further more, he bagged a Postgraduate Professional Diploma in Accounting from Nigerian College of Accountancy, Kwali, Jos, Plateau State; in 2017.
+    Furthermore, he is also a member of some prestigious professional associations. This includes Member, Association of National Accountants of Nigeria (ANAN); Fellow, Chartered Institute of Loan and Risk Management (FCIRLM) and Member, Chartered Institute of Local Government and Public Administration of Nigeria.
+    He attended several Trainings, Workshops, Seminars and Certificate Courses, particularly in Cooperative Management. Amongst these was his participation in a course titled “Role of Financial Indices in Cooperative Management”, in the year 2016. He had also in 2007 taken a Certificate Course on “Cooperative as a Tool for Social and Economic Security”. Finally, he participated at a ‘Train the Trainers Workshop”, under the auspices of the United States of America and the Federal Government of Nigeria Funds for HIV/AIDS Relief (PEPFAR Project).
+    Adewuyi is not just a man of books. His academic prowess as made him to be saddled with so many responsibilities within and outside his professional capacity. He worked in cash office, the treasury unit of University of Lagos and International School, Unilag for several years. In 2013-2019, he was appointed as the Head, Faculty Finance Office, Faculty of Arts and Social Sciences respectively. At present, he is the Head of Account Section, Works and Physical planning Department, University of Lagos, Akoka.
+    He is the current Vice President of the Lagos Mainland multipurpose cooperative union and appointed chairman by the Lascofed membership drive committee, Mainland Area.
+    Adewuyi Yekeen Ademola is a recipient of the “Most Outstanding Cooperative Leader Award” at the international cooperative day 2023. This Followed His Outstanding contributions to the development of the cooperative movement in Lagos State.
+    He is happily married with children, and lives with his family in Lagos.`,
   },
   {
     name: "MR E O OLUYELU",
@@ -214,7 +221,7 @@ const Management = () => {
         <div className="">
           <div className="mb-[6rem]">
             <h1 className="text-[2rem] font-semibold pl-4 mb-[2rem] text-center md:text-left">
-              Our Management
+              Our Management Committee
             </h1>
             <div className="flex justify-center w-full h-full">
               <div className="mt-[1rem] grid xl:grid-cols-4 md:grid-cols-2 gap-[2rem]">
