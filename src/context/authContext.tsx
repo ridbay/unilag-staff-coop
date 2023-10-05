@@ -64,22 +64,28 @@ const AuthService = ({ children }: any) => {
   const loginWithEmailAndPassword = async (email: string, password: string) => {
     try {
       await signInWithEmailAndPassword(auth, email, password);
-      ToastMessages("Successfully Signed In", false)
+      ToastMessages("Successfully Signed In", false);
       router.push("/admin/home");
     } catch (error: any) {
       console.log(error.message);
-      ToastMessages("Invalid Login Credentials", true)
+      if (
+        error.message == "Firebase: Error (auth/invalid-login-credentials)."
+      ) {
+        ToastMessages("Invalid Login Credentials", true);
+      } else {
+        ToastMessages("Network Error", true);
+      }
     }
   };
 
   const AdminSignOut = () => {
     try {
-      signOut(auth)
-      router.push("/sign-in/admin-login")
+      signOut(auth);
+      router.push("/sign-in/admin-login");
     } catch (error) {
-      ToastMessages("An error occured", true)
+      ToastMessages("An error occured", true);
     }
-  }
+  };
 
   const MemberSignIn = (pass_no: string, password: string | number) => {
     const user = membersData.find((user: User) => {
@@ -124,6 +130,5 @@ export const useAuth = () => {
   return useContext(AuthContext);
 };
 
-
 // AJIBOYe
-// 
+//
