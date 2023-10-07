@@ -20,8 +20,6 @@ const firebaseConfig = {
 // Initialize firebase app
 const app = initializeApp(firebaseConfig);
 export const auth = getAuth(app);
-export const db = getFirestore(app);
-db.app.automaticDataCollectionEnabled
-
+export const db = initializeFirestore(app, { experimentalForceLongPolling: true });
 // Initialize storage
 // export const storage = getStorage(app);
