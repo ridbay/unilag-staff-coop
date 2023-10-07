@@ -14,12 +14,11 @@ const firebaseConfig = {
   storageBucket: process.env.NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET,
   messagingSenderId: process.env.NEXT_PUBLIC_FIREBASE_MESSAGE_SENDER_ID,
   appId: process.env.NEXT_PUBLIC_FIREBASE_APP_ID,
-  measurementID: process.env.NEXT_PUBLIC_FIREBASE_MEASUREMENTID,
 };
 
 // Initialize firebase app
 const app = initializeApp(firebaseConfig);
 export const auth = getAuth(app);
-export const db = initializeFirestore(app, { experimentalForceLongPolling: true });
+export const db = initializeFirestore(app, { experimentalForceLongPolling: true, } );
 // Initialize storage
 // export const storage = getStorage(app);
