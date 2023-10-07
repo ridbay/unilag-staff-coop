@@ -4,8 +4,12 @@ import dash from "../../../public/imgs/dash.svg"
 import {BsPrinter} from "react-icons/bs"
 import Image from "next/image";
 // @ts-ignore
-import html2pdf from "html2pdf.js";
+// import html2pdf from "html2pdf.js";
+import dynamic from 'next/dynamic'
 
+// const TerminalComponent = dynamic(() => import('<path-to>/components/terminal-component'), {
+//     ssr: false
+// })
 
 const MembersPage = () => {
 
@@ -15,18 +19,22 @@ const MembersPage = () => {
     const {currentUser, setCurrentUser} = useAuth()
 
 
-    const handlePrint = () => {
-       const content = document.getElementById("printable-content");
+    const handlePrint = async() => {
 
-       const pdfOptions = {
-         margin: 10,
-         filename: `${currentUser?.[" FULL NAME "]}-dividend.pdf`,
-         image: { type: "jpeg", quality: 0.98 },
-         html2canvas: { scale: 2 },
-         jsPDF: { unit: "mm", format: "a4", orientation: "portrait" },
-       };
+      // @ts-ignore
 
-       html2pdf().from(content).set(pdfOptions).save();
+      const html2pdf = (await import("html2pdf.js")).default;
+      const content = document.getElementById("printable-content");
+
+      const pdfOptions = {
+        margin: 10,
+        filename: `${currentUser?.[" FULL NAME "]}-dividend.pdf`,
+        image: { type: "jpeg", quality: 0.98 },
+        html2canvas: { scale: 2 },
+        jsPDF: { unit: "mm", format: "a4", orientation: "portrait" },
+      };
+
+      html2pdf().from(content).set(pdfOptions).save();
     }
     
 
