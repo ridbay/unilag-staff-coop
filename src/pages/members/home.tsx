@@ -1,7 +1,10 @@
 import { useAuth } from "@/context/authContext";
 import { useRouter } from "next/router";
 import dash from "../../../public/imgs/dash.svg"
+import {BsPrinter} from "react-icons/bs"
 import Image from "next/image";
+// @ts-ignore
+import html2pdf from "html2pdf.js";
 
 
 const MembersPage = () => {
@@ -11,6 +14,20 @@ const MembersPage = () => {
 
     const {currentUser, setCurrentUser} = useAuth()
 
+
+    const handlePrint = () => {
+       const content = document.getElementById("printable-content");
+
+       const pdfOptions = {
+         margin: 10,
+         filename: "printable.pdf",
+         image: { type: "jpeg", quality: 0.98 },
+         html2canvas: { scale: 2 },
+         jsPDF: { unit: "mm", format: "a4", orientation: "portrait" },
+       };
+
+       html2pdf().from(content).set(pdfOptions).save();
+    }
     
 
     return (
@@ -20,7 +37,7 @@ const MembersPage = () => {
             Welcome {currentUser?.[" FULL NAME "]}
           </p>
         </div>
-        <div>
+        <div id="printable-content">
           <div className="flex justify-center flex-col gap-6 items-center">
             <h1 className="md:w-[32rem] w-[100%] text-center rounded-sm text-[1.5rem] font-semibold py-6 bg-green-400 text-white">
               Dividends
@@ -99,7 +116,13 @@ const MembersPage = () => {
                 </div>
               </div>
             </div>
-            <div className="w-full flex justify-start md:justify-center">
+            <div className="w-full flex gap-4 justify-start md:justify-center">
+              <button
+                className="bg-theme-color flex items-center gap-2 text-white py-4 px-6 rounded-md"
+                onClick={handlePrint}
+              >
+                <p>Print</p> <BsPrinter />
+              </button>
               <button
                 className="bg-theme-color text-white py-4 px-6 rounded-md"
                 onClick={() => {
