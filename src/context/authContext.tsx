@@ -1,3 +1,5 @@
+"use client"
+
 import { signInWithEmailAndPassword, signOut } from "firebase/auth";
 import { auth } from "@/lib/firebase";
 import React, { useContext, useState, useEffect } from "react";
