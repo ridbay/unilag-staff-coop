@@ -61,7 +61,7 @@ const MembersPage = () => {
       <div className="p-6">
         <div className="md:pl-8 lg:pl-0">
           <p className="text-[21px] font-semibold pb-4">
-            Welcome {currentUser?.[" FULL NAME "]}
+            Welcome {currentUser?.[" FULL NAME "] ? currentUser?.[" FULL NAME "] : currentUser?.[" FULL NAME"]}
           </p>
         </div>
         <div id="printable-content">
@@ -73,7 +73,7 @@ const MembersPage = () => {
               <div className="border-b-2 sm:border-b-0 border-b-slate-100 pb-2">
                 <p className="text-[18px] mb-2">Full Name</p>
                 <p className="font-bold text-[21px]">
-                  {currentUser?.[" FULL NAME "]}
+                  {currentUser?.[" FULL NAME "] ? currentUser?.[" FULL NAME "] : currentUser?.[" FULL NAME"]}
                 </p>
               </div>
               <div className="border-b-2 sm:border-b-0 border-b-slate-100 pb-2">

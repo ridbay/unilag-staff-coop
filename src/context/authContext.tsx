@@ -20,7 +20,7 @@ import {
 type ValueProp = {
   loginWithEmailAndPassword: (email: string, password: string) => Promise<void>;
   MemberSignIn: (pass_no: string, password: number | string) => void;
-  currentUser: User | null;
+  currentUser: any | null;
   setCurrentUser: React.Dispatch<React.SetStateAction<User | null>>;
   membersData: any;
   setLoading: React.Dispatch<React.SetStateAction<boolean>>;
@@ -40,7 +40,7 @@ type User = {
 const AuthContext = React.createContext({} as ValueProp);
 
 const AuthService = ({ children }: any) => {
-  const [currentUser, setCurrentUser] = useState<User | null>(null);
+  const [currentUser, setCurrentUser] = useState<any | null>(null);
   const [membersData, setMembersData] = useState<any>([]);
   const [loading, setLoading] = useState(false);
 
