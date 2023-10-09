@@ -37,6 +37,25 @@ const MembersPage = () => {
       html2pdf().from(content).set(pdfOptions).save();
     }
     
+    const INTIAL_ENTERTAINMENT = parseFloat(
+      currentUser?.ENTERTAINMENT!
+    ).toFixed(2);
+    const ENTERTAINMENT = parseFloat(INTIAL_ENTERTAINMENT).toLocaleString()
+
+     const INTIAL_DIVIDEND = parseFloat(
+       currentUser?.DIVIDENDS!
+     ).toFixed(2);
+     const DIVIDEND = parseFloat(INTIAL_DIVIDEND).toLocaleString();
+
+      const INTIAL_SHARES = parseFloat(
+        currentUser?.SHARES!
+      ).toFixed(2);
+      const SHARES = parseFloat(INTIAL_SHARES).toLocaleString();
+
+       const INTIAL_TOTAL = parseFloat(
+         currentUser?.TOTAL!
+       ).toFixed(2);
+       const TOTAL = parseFloat(INTIAL_TOTAL).toLocaleString();
 
     return (
       <div className="p-6">
@@ -75,7 +94,7 @@ const MembersPage = () => {
                 <p className="text-[18px] mb-2">Entertainment</p>
                 <div className="font-bold text-[21px]">
                   {currentUser?.ENTERTAINMENT ? (
-                    currentUser?.ENTERTAINMENT
+                    `#${ENTERTAINMENT}`
                   ) : (
                     <p className="h-1 mt-4 w-16 bg-black"></p>
                   )}
@@ -85,7 +104,7 @@ const MembersPage = () => {
                 <p className="text-[18px] mb-2">Shares</p>
                 <div className="font-bold text-[21px]">
                   {currentUser?.SHARES ? (
-                    currentUser?.SHARES
+                    `#${SHARES}`
                   ) : (
                     <p className="h-1 mt-4 w-16 bg-black"></p>
                   )}
@@ -95,7 +114,7 @@ const MembersPage = () => {
                 <p className="text-[18px] mb-2">Dividend</p>
                 <div className="font-bold text-[21px]">
                   {currentUser?.DIVIDENDS ? (
-                    currentUser?.DIVIDENDS
+                    `#${DIVIDEND}`
                   ) : (
                     <p className="h-1 mt-4 w-16 bg-black"></p>
                   )}
@@ -117,7 +136,7 @@ const MembersPage = () => {
                 <p className="text-[18px] mb-2">Total</p>
                 <div className="font-bold text-[21px]">
                   {currentUser?.TOTAL ? (
-                    currentUser?.TOTAL
+                   `#${TOTAL}`
                   ) : (
                     <p className="h-1 mt-4 w-16 bg-black"></p>
                   )}

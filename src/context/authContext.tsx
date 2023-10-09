@@ -90,9 +90,14 @@ const AuthService = ({ children }: any) => {
   };
 
   const MemberSignIn = (pass_no: string, password: string | number) => {
-    const user = membersData.find((user: User) => {
+    const user = membersData.find((user: any) => {
       console.log(user);
-      const surname = user[" FULL NAME "].split(" ");
+      let surname;
+      if(user[" FULL NAME"]){
+      surname = user[" FULL NAME"].split(" ");
+      }else if(user[" FULL NAME "]){
+      surname = user[" FULL NAME "].split(" ");
+      }
       const emailFound = pass_no.toLowerCase() == user.PBNo;
       const isPasswordCorrect = password == surname[0].toLowerCase();
       // console.log(password, user["ID "])
