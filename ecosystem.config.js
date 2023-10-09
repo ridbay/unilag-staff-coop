@@ -6,10 +6,10 @@ module.exports = {
   deploy: {
     production: {
       key: 'key.pem',
-      user: 'ubuntu',
+      user: 'root',
       host: '196.45.48.166',
       ref: 'origin/master',
-      repo: 'git@github.com:chibuike-19/unilag-staff-coop.git',
+      repo: 'https://github.com/chibuike-19/unilag-staff-coop.git',
       path: '/home/ubuntu',
       'pre-deploy-local': '',
       'post-deploy': 'source ~/.nvm/nvm.sh && npm install && npm run build && pm2 reload ecosystem.config.js --env production',
