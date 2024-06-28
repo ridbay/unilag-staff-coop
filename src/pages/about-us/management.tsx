@@ -168,7 +168,7 @@ const Elders = [
     desc: "",
   },
   {
-    name: "MRS JOHNSON A. AJIBOYE",
+    name: "MR JOHNSON A. AJIBOYE",
     position: "Elder in Council",
     img: Elder5,
     desc: "",

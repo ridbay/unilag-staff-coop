@@ -43,11 +43,7 @@ const MemberLogin = () => {
             alt="Unilag staff coop logo"
             className="w-[8rem] h-[8rem]"
           />
-          <Image
-            src={UnilagLogo}
-            alt="Unilag logo"
-            className="w-[8rem] h-[8rem]"
-          />
+         
         </div>
         <div className="mb-3">
           <h1 className="text-[2rem]">Member Login</h1>

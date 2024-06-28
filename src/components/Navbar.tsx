@@ -105,13 +105,9 @@ const Navbar = () => {
               <Image
                 src={MainLogo}
                 alt="Staff coop Logo"
-                className="w-[2.5rem] h-[2.5rem]"
+                className="w-[3.5rem] h-[3.5rem]"
               />
-              <Image
-                src={UnilagLogo}
-                alt="Unilag Logo"
-                className="w-[2.5rem] h-[2.5rem]"
-              />
+          
             </Link>
             <Box
               sx={{
