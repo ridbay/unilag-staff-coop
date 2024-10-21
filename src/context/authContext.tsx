@@ -91,16 +91,11 @@ const AuthService = ({ children }: any) => {
 
   const MemberSignIn = (pass_no: string, password: string | number) => {
     const user = membersData.find((user: any) => {
-      console.log(user);
-      let surname;
-      if(user[" FULL NAME"]){
-      surname = user[" FULL NAME"].split(" ");
-      }else if(user[" FULL NAME "]){
-      surname = user[" FULL NAME "].split(" ");
-      }
-      const emailFound = pass_no.toLowerCase() == user.PBNo;
+      // console.log(user);
+      let surname = user.fullname.split(" ");
+      const emailFound = pass_no.toLowerCase() == user.pbno;
       const isPasswordCorrect = password == surname[0].toLowerCase();
-      // console.log(password, user["ID "])
+      console.log(isPasswordCorrect, emailFound)
       const userFound = emailFound && isPasswordCorrect;
       return userFound;
     });
