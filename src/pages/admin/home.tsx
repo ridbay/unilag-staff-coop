@@ -39,17 +39,34 @@ const AdminHome = () => {
        const arrayBuffer = event.target.result;
        const wb = read(arrayBuffer); // parse the array buffer
        const ws = wb.Sheets[wb.SheetNames[0]]; // get the first worksheet
-       const data: excel[] = utils.sheet_to_json<excel>(ws); // generate
-       console.log(data);
-       const docRef = doc(db, "members", "unique_members");
-       await setDoc(docRef, { data }).then(() => {
-         console.log("doc successfully added");
-         ToastMessages("File uploaded successfully", false)
-       }).catch(() => {
-        ToastMessages("An Error Occured, pls try again", true)
+       const data: excel[] = utils.sheet_to_json<excel>(ws, {
+         header: 1, // Get raw header values first
        });
+
+       // Clean headers and convert to objects
+       //  @ts-ignore
+       const cleanedHeaders = data[0].map((header: string) =>
+         header.trim().replace(/['"]+/g, "").replace(/\s+/g, "").toLowerCase()
+       );
+       //  @ts-ignore
+       const cleanedData = data.slice(1).map((row: any[]) =>
+         row.reduce((acc, value, index) => {
+           acc[cleanedHeaders[index]] = value;
+           return acc;
+         }, {})
+       );
+       console.log(cleanedData);
+       const docRef = doc(db, "members", "unique_members");
+       await setDoc(docRef, { data: cleanedData })
+         .then(() => {
+           console.log("doc successfully added");
+           ToastMessages("File uploaded successfully", false);
+         })
+         .catch(() => {
+           ToastMessages("An Error Occured, pls try again", true);
+         });
        setLoading(false);
-       return data;
+       return cleanedData;
        // The 'arrayBuffer' variable now contains the file data as an ArrayBuffer
        // You can use 'arrayBuffer' for further processing
        // For example, you can send it to a server or parse it depending on your needs

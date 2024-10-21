@@ -112,7 +112,6 @@ const Navbar = () => {
             <Box
               sx={{
                 display: { xs: "none", md: "flex" },
-
                 gap: "2rem",
               }}
             >
