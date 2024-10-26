@@ -67,7 +67,7 @@ const Footer = () => {
           </div>
           <div className="flex flex-col gap-4 text-[1rem]">
             <p>
-              © 2023 Unique Unilag Staff Cooperative Multipurpose Society
+              © 2024 Unique Unilag Staff Cooperative Multipurpose Society
               Limited{" "}
             </p>
             <Link href="/">
