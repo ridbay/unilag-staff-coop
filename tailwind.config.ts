@@ -15,7 +15,7 @@ const config: Config = {
         carouselOne: "url('/imgs/heroImg1.jpg')",
         carouselOneMobile: "url('/imgs/heroImg1Mobile.jpg')",
         carouselTwo: "url('/imgs/heroImg2.jpg')",
-        carouselThree: "url('/imgs/heroImg3.jpg')",
+        carouselThree: "url('/imgs/heroImg4.jpg')",
         carouselFour: "url('/imgs/carousel-img4.png')",
       },
       colors: {
