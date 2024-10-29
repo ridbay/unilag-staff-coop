@@ -34,8 +34,10 @@ const resources = [
   { text: "FAQs", link: "/faqs" },
 ];
 const authentication = [
-  { text: "Member Login", link: "/sign-in/member-login" },
+  { text: "E-dividend", link: "/sign-in/member-login" },
+  { text: "Member Login", link: "" },
   { text: "Admin Login", link: "/sign-in/admin-login" },
+  { text: "App Admin Login", link: "" },
 ];
 const Mobilepages = [
   { text: "Home", link: "/" },
@@ -45,8 +47,10 @@ const Mobilepages = [
   { text: "Downloads", link: "/resources/downloads" },
   { text: "FAQs", link: "/faqs" },
   { text: "Contact Us", link: "/contact-us" },
-  { text: "Member Login", link: "/sign-in/member-login" },
+  { text: "E-dividend", link: "/sign-in/member-login" },
+  { text: "Member Login", link: "" },
   { text: "Admin Login", link: "/sign-in/admin-login" },
+  { text: "App Admin Login", link: "" },
 ];
 
 const Navbar = () => {
