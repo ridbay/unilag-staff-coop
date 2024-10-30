@@ -3,12 +3,13 @@ import React from "react";
 
 
 type FileDownloadType = {
-  downloadLink: string
+  downloadLink: string,
+  message?: string
 }
-export const FileDownload = ({downloadLink}: FileDownloadType) => {
+export const FileDownload = ({downloadLink, message}: FileDownloadType) => {
   return (
     <div className="bg-theme-color text-white text-center py-3 rounded-md px-3">
-      <a href={downloadLink} target="_blank" title="Unique management event">Download material</a>
+      <a href={downloadLink} target="_blank" title="Unique management event"> {message ?? "Download material"}</a>
     </div>
   );
 }

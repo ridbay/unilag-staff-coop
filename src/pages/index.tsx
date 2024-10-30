@@ -8,6 +8,7 @@ import { MembersBenefits } from "@/data/HomeData";
 import { CardContent } from "@/data/HomeData";
 import { data } from "autoprefixer";
 import Link from "next/link";
+import MarqueeSlide from "@/components/MarqueeSlide";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -25,6 +26,7 @@ export default function Home() {
   return (
     <main className={`bg-[#fdfdfd0d] mb-12`}>
       <Carousel images={CarouselData} />
+      <MarqueeSlide />
       <div className="py-[4rem] ">
         <div className="md:pl-[4rem] pl-[2rem] mb-12">
           <p className="text-[1.5rem] md:text-[2rem] font-semibold">Membership</p>
