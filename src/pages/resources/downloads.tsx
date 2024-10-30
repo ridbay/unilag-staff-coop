@@ -5,10 +5,10 @@ import React from "react";
 type FileDownloadType = {
   downloadLink: string
 }
-const FileDownload = ({downloadLink}: FileDownloadType) => {
+export const FileDownload = ({downloadLink}: FileDownloadType) => {
   return (
-    <div className="bg-theme-color text-white text-center py-3 rounded-md">
-      <a href={downloadLink} target="_blank" title="Unique management event">Download</a>
+    <div className="bg-theme-color text-white text-center py-3 rounded-md px-3">
+      <a href={downloadLink} target="_blank" title="Unique management event">Download material</a>
     </div>
   );
 }
