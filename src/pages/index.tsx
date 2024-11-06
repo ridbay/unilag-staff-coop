@@ -9,10 +9,15 @@ import { CardContent } from "@/data/HomeData";
 import { data } from "autoprefixer";
 import Link from "next/link";
 import MarqueeSlide from "@/components/MarqueeSlide";
+import Modal from "@/components/Modal";
+// import { Viewr } from 'react-pdf';
+import { Document, Page } from 'react-pdf';
+import React, { useEffect, useState } from "react";
 
 const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
+  const [isModalOpen, setIsModalOpen] = useState(false);
   const CarouselData = [
     {
       bgImg: "bg-carouselOne",
@@ -23,8 +28,28 @@ export default function Home() {
     { bgImg: "bg-carouselThree", text: "" },
     // { bgImg: "bg-carouselFour", text: "" },
   ];
+
+  useEffect(() => {
+    setIsModalOpen(true)
+}, [])
+
   return (
     <main className={`bg-[#fdfdfd0d] mb-12`}>
+      {
+        isModalOpen && (
+          <Modal isOpen={isModalOpen} handleChange={() => setIsModalOpen(false)}>
+          <div className="modal-content">
+      <button className="close-button" onClick={() =>{ setIsModalOpen(false); console.log("sdsds")}}>Close</button>
+  
+          <iframe className="w-full h-full" 
+                  src="/pdf/Unique_26th.pdf"
+             style={{width: '100%', height: '80vh', padding: '2vh !important'}}>
+          </iframe>
+          </div>
+        </Modal>
+        )
+      }
+     
       <Carousel images={CarouselData} />
       <MarqueeSlide />
       <div className="py-[4rem] ">
@@ -54,11 +79,10 @@ export default function Home() {
           {whoWeAreSectionData.map((data) => (
             <div
               key={data.text}
-              className={`flex ${
-                data.isReversed
-                  ? "lg:flex-row-reverse flex-col"
-                  : "flex-col lg:flex-row"
-              } justify-between items-center mb-24 text-[1rem] md:gap-0 gap-6 md:text-[1.5rem]`}
+              className={`flex ${data.isReversed
+                ? "lg:flex-row-reverse flex-col"
+                : "flex-col lg:flex-row"
+                } justify-between items-center mb-24 text-[1rem] md:gap-0 gap-6 md:text-[1.5rem]`}
             >
               <div className="max-w-[40rem] ">
                 <p className="font-semibold mb-2">{data.title}</p>
