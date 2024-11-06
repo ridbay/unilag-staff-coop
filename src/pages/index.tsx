@@ -6,12 +6,9 @@ import { whoWeAreSectionData } from "@/data/HomeData";
 import MiniCard, { MiniCardWithImage } from "@/components/mini-card";
 import { MembersBenefits } from "@/data/HomeData";
 import { CardContent } from "@/data/HomeData";
-import { data } from "autoprefixer";
 import Link from "next/link";
 import MarqueeSlide from "@/components/MarqueeSlide";
 import Modal from "@/components/Modal";
-// import { Viewr } from 'react-pdf';
-import { Document, Page } from 'react-pdf';
 import React, { useEffect, useState } from "react";
 
 const inter = Inter({ subsets: ["latin"] });
