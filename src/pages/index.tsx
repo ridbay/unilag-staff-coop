@@ -10,6 +10,7 @@ import Link from "next/link";
 import MarqueeSlide from "@/components/MarqueeSlide";
 import Modal from "@/components/Modal";
 import React, { useEffect, useState } from "react";
+import { FileDownload } from "./resources/downloads";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -38,10 +39,14 @@ export default function Home() {
           <div className="modal-content">
       <button className="close-button" onClick={() =>{ setIsModalOpen(false); console.log("sdsds")}}>Close</button>
   
-          <iframe className="w-full h-full" 
+          {/* <iframe className="w-full h-full" 
                   src="/pdf/Unique_26th.pdf"
              style={{width: '100%', height: '80vh', padding: '2vh !important'}}>
-          </iframe>
+          </iframe> */}
+          <img src="/imgs/agm_banner2.jpg" alt="agm_sub_banner" style={{width: '100%', margin: 'auto', height: '70vh'}} />
+          <button style={{margin: '5px', width: '50%'}}>
+          <FileDownload downloadLink="/pdf/Unique_26th.pdf" message="Download AGM Report" />
+          </button>
           </div>
         </Modal>
         )
