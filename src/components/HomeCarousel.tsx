@@ -30,13 +30,12 @@ const Carousel: React.FC<CarouselProps> = ({ images }) => {
   };
 
   return (
-    <div className="relative h-[34rem] md:h-[39rem] transition-transform duration-1000 ease-in-out">
+    <div className="relative h-[38rem] md:h-[45rem] transition-transform duration-1000 ease-in-out">
       {images.map((image, index) => (
         <div
           key={index}
-          className={`w-full text-white place-content-center ${
-            currentIndex === index ? "translate-x-0" : ""
-          } leading-[156px] bg-no-repeat tracking-wide text-[10rem]  font-bold h-full ${image.mobileImg ? `lg:${image.mobileImg} ${image.bgImg}` : `${image.bgImg}`} bg-cover`}
+          className={`w-full text-white place-content-center ${currentIndex === index ? "translate-x-0" : ""
+            } leading-[156px] bg-no-repeat tracking-wide text-[10rem]  font-bold h-full ${image.mobileImg ? `lg:${image.mobileImg} ${image.bgImg}` : `${image.bgImg}`} bg-cover`}
           style={{ display: currentIndex == index ? "grid" : "none" }}
         >
           <p className="drop-shadow-2xl">{image.text}</p>
@@ -59,9 +58,8 @@ const Carousel: React.FC<CarouselProps> = ({ images }) => {
         {images.map((_, index) => (
           <div
             key={index}
-            className={`w-6 h-6 rounded-full ${
-              index === currentIndex ? "bg-theme-color" : "bg-white"
-            }`}
+            className={`w-6 h-6 rounded-full ${index === currentIndex ? "bg-theme-color" : "bg-white"
+              }`}
             onClick={() => setCurrentIndex(index)}
           />
         ))}

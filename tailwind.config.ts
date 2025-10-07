@@ -12,10 +12,10 @@ const config: Config = {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
         "gradient-conic":
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
-        carouselOne: "url('/imgs/heroImg1.jpg')",
-        carouselOneMobile: "url('/imgs/heroImg1Mobile.jpg')",
+        carouselOne: "url('/imgs/heroImg1.png')",
+        carouselOneMobile: "url('/imgs/heroImg1Mobile.png')",
         carouselTwo: "url('/imgs/heroImg2.jpg')",
-        carouselThree: "url('/imgs/heroImg4.jpg')",
+        carouselThree: "url('/imgs/heroImg1.png')",
         carouselFour: "url('/imgs/carousel-img4.png')",
       },
       colors: {

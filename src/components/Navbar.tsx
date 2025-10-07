@@ -37,7 +37,7 @@ const authentication = [
   { text: "E-dividend", link: "/sign-in/member-login" },
   { text: "Member Login", link: "" },
   { text: "Admin Login", link: "/sign-in/admin-login" },
-  { text: "App Admin Login", link: "" },
+  { text: "App Admin Login", link: "https://uniqueunilagapp.com" },
 ];
 const Mobilepages = [
   { text: "Home", link: "/" },
@@ -50,7 +50,7 @@ const Mobilepages = [
   { text: "E-dividend", link: "/sign-in/member-login" },
   { text: "Member Login", link: "" },
   { text: "Admin Login", link: "/sign-in/admin-login" },
-  { text: "App Admin Login", link: "" },
+  { text: "App Admin Login", link: "https://uniqueunilagapp.com" },
 ];
 
 const Navbar = () => {
@@ -60,9 +60,9 @@ const Navbar = () => {
   const [anchorElUser, setAnchorElUser] = React.useState<null | HTMLElement>(
     null
   );
-    const [anchorElLogin, setAnchorElLogin] = React.useState<null | HTMLElement>(
-      null
-    );
+  const [anchorElLogin, setAnchorElLogin] = React.useState<null | HTMLElement>(
+    null
+  );
   const router = useRouter();
   const isActiveRoute = (route: any) => router.pathname === route;
 
@@ -111,7 +111,7 @@ const Navbar = () => {
                 alt="Staff coop Logo"
                 className="w-[3.5rem] h-[3.5rem]"
               />
-          
+
             </Link>
             <Box
               sx={{
@@ -125,9 +125,9 @@ const Navbar = () => {
                   onClick={(e) => {
                     if (page.text == "Resources") {
                       handleOpenNavMenu(e);
-                    } else if(page.text == "Sign In"){
+                    } else if (page.text == "Sign In") {
                       handleOpenLoginMenu(e);
-                    }else {
+                    } else {
                       router.push(page.link);
                       handleCloseNavMenu();
                     }

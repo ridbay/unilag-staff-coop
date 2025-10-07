@@ -1,11 +1,10 @@
 "use client"
 
-import { initializeApp } from "firebase/app";
+import { initializeApp, getApps, getApp } from "firebase/app";
 import { getAuth } from "firebase/auth";
 import { getDatabase } from "firebase/database";
-import {getFirestore} from "firebase/firestore"
+import { getFirestore } from "firebase/firestore";
 import { initializeFirestore } from "firebase/firestore";
-
 
 const firebaseConfig = {
   apiKey: process.env.NEXT_PUBLIC_FIREBASE_API_KEY,
@@ -16,9 +15,14 @@ const firebaseConfig = {
   appId: process.env.NEXT_PUBLIC_FIREBASE_APP_ID,
 };
 
-// Initialize firebase app
-const app = initializeApp(firebaseConfig);
+// Initialize Firebase
+const app = !getApps().length ? initializeApp(firebaseConfig) : getApp();
+
+// Initialize Firebase services
 export const auth = getAuth(app);
-export const db = initializeFirestore(app, { experimentalForceLongPolling: true, } );
-// Initialize storage
+export const db = initializeFirestore(app, { 
+  experimentalForceLongPolling: true,
+});
+
+// Initialize other Firebase services as needed
 // export const storage = getStorage(app);

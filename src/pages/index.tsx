@@ -23,35 +23,35 @@ export default function Home() {
       mobileImg: "bg-carouselOneMobile",
     },
     { bgImg: "bg-carouselTwo", text: "" },
-    { bgImg: "bg-carouselThree", text: "" },
+    // { bgImg: "bg-carouselThree", text: "" },
     // { bgImg: "bg-carouselFour", text: "" },
   ];
 
   useEffect(() => {
     setIsModalOpen(true)
-}, [])
+  }, [])
 
   return (
     <main className={`bg-[#fdfdfd0d] mb-12`}>
       {
         isModalOpen && (
           <Modal isOpen={isModalOpen} handleChange={() => setIsModalOpen(false)}>
-          <div className="modal-content">
-      <button className="close-button" onClick={() =>{ setIsModalOpen(false); console.log("sdsds")}}>Close</button>
-  
-          {/* <iframe className="w-full h-full" 
+            <div className="modal-content">
+              <button className="close-button" onClick={() => { setIsModalOpen(false); console.log("sdsds") }}>Close</button>
+
+              {/* <iframe className="w-full h-full" 
                   src="/pdf/Unique_26th.pdf"
              style={{width: '100%', height: '80vh', padding: '2vh !important'}}>
           </iframe> */}
-          <img src="/imgs/agm_banner2.jpg" alt="agm_sub_banner" style={{width: '100%', margin: 'auto', height: '70vh'}} />
-          <button style={{margin: '5px', width: '50%'}}>
-          <FileDownload downloadLink="/pdf/Unique_26th.pdf" message="Download AGM Report" />
-          </button>
-          </div>
-        </Modal>
+              <img src="/imgs/agm_banner2.jpg" alt="agm_sub_banner" style={{ width: '100%', margin: 'auto', height: '70vh' }} />
+              <button style={{ margin: '5px', width: '50%' }}>
+                <FileDownload downloadLink="/pdf/Unique_26th.pdf" message="Download AGM Report" />
+              </button>
+            </div>
+          </Modal>
         )
       }
-     
+
       <Carousel images={CarouselData} />
       <MarqueeSlide />
       <div className="py-[4rem] ">

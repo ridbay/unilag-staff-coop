@@ -2,7 +2,8 @@ import { useState, useEffect } from "react";
 
 import ManagementComponents from "@/components/about-components/ManagementComponent";
 import AboutLayout from "@/components/layouts/AboutLayout";
-import President from "../../../public/management/DR A A ADEBAYO - PRESIDENT.jpg";
+// import President from "../../../public/management/DR A A ADEBAYO - PRESIDENT.jpg";
+import President from "../../../public/management/Dr Afolabi Adebayo President.png";
 import VicePresident from "../../../public/management/ENGR. OLAWALE JOEL - VICE PRESIDENT.jpg";
 import Treasurer from "../../../public/management/MR A I OLALEYE - TREASURER.jpg";
 import GenSec from "../../../public/management/MR. FELIX O AKEJU - GENERAL SECRETARY.jpg";
@@ -22,12 +23,13 @@ import IPP from "../../../public/imgs/Ademola-Yekeen-Adewunmi-ipp.jpg";
 import Member2 from "../../../public/imgs/Dr-(Barr)-Idriss-Odekunle.jpg";
 import Member3 from "../../../public/imgs/Pharm-Kenneth-Oladipupo.jpg";
 import Member4 from "../../../public/management/Dr.-(Mrs)-Adejoke-Osibote-management-committee.jpg"
+import Member5 from "../../../public/management/Dr. Olusoji Babatunde Okunoye.png"
 import Modal from "../../components/Modal";
 import Image, { StaticImageData } from "next/image";
 
 const MANAGEMENTS = [
   {
-    name: "DR A A ADEBAYO",
+    name: "Dr. Afolabi Adebayo",
     position: "President",
     img: President,
     desc: `Dr. Afolabi Abiodun ADEBAYO is the President of Unique Unilag Staff Cooperative Multipurpose Society Limited. He was elected President at the 2022 Annual General Meeting (AGM) of the Society. Before his being elected as the President, he had previously been appointed twice as a Member, Credit Committee (2006-2008 and 2008-2010). Furthermore, he had also been elected twice, as the Chairman, Credit Committee of the Society, from 2010-2012 and 2012-2014, and as Vice President from 2018 – 2022.
@@ -111,10 +113,16 @@ const MANAGEMENTS = [
     img: Member3,
     desc: "",
   },
+  // {
+  //   name: "Dr. (Mrs) Adejoke Osibote",
+  //   position: "Management Member",
+  //   img: Member4,
+  //   desc: "",
+  // },
   {
-    name: "Dr. (Mrs) Adejoke Osibote",
+    name: "Dr. Olusoji Babatunde Okunoye",
     position: "Management Member",
-    img: Member4,
+    img: Member5,
     desc: "",
   },
   {
