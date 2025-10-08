@@ -1,6 +1,11 @@
-import Image from "next/image";
+import Image, { StaticImageData } from "next/image";
 import { Inter } from "next/font/google";
-import Carousel from "@/components/HomeCarousel";
+import ModernCarousel from "@/components/ModernCarousel";
+// Image paths in the public directory
+const heroImg1 = "/imgs/heroImg1.png";
+const heroImg1Mobile = "/imgs/heroImg1Mobile.png";
+const heroImg2 = "/imgs/heroImg2.jpg";
+const heroImg3 = "/imgs/heroImg3.jpg";
 import Typography from "@mui/material/Typography";
 import { whoWeAreSectionData } from "@/data/HomeData";
 import MiniCard, { MiniCardWithImage } from "@/components/mini-card";
@@ -18,13 +23,18 @@ export default function Home() {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const CarouselData = [
     {
-      bgImg: "bg-carouselOne",
-      text: "",
-      mobileImg: "bg-carouselOneMobile",
+      desktop: heroImg1,
+      mobile: heroImg1Mobile,
+      text: ""
     },
-    { bgImg: "bg-carouselTwo", text: "" },
-    // { bgImg: "bg-carouselThree", text: "" },
-    // { bgImg: "bg-carouselFour", text: "" },
+    {
+      desktop: heroImg2,
+      text: ""
+    },
+    // {
+    //   desktop: heroImg3,
+    //   text: ""
+    // }
   ];
 
   useEffect(() => {
@@ -63,7 +73,11 @@ export default function Home() {
         )
       }
 
-      <Carousel images={CarouselData} />
+      <ModernCarousel
+        images={CarouselData}
+        autoPlay={true}
+        interval={5000}
+      />
       <MarqueeSlide />
       <div className="py-[4rem] ">
         <div className="md:pl-[4rem] pl-[2rem] mb-12">
