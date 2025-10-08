@@ -65,7 +65,7 @@ const ModernCarousel: React.FC<CarouselProps> = ({
   };
 
   return (
-    <div className="relative w-full h-[50vh] sm:h-[60vh] md:h-[70vh] lg:h-[80vh] xl:h-[90vh] overflow-hidden rounded-xl">
+    <div className="relative w-full h-[80vh] overflow-hidden">
       <AnimatePresence initial={false} custom={direction}>
         <motion.div
           key={currentIndex}
@@ -81,26 +81,44 @@ const ModernCarousel: React.FC<CarouselProps> = ({
           className="absolute inset-0 w-full h-full"
         >
           {/* Desktop Image */}
-          <div className="hidden md:block w-full h-full">
-            <Image
-              src={images[currentIndex].desktop}
-              alt=""
-              fill
-              className="object-cover"
-              priority={currentIndex === 0}
-              sizes="100vw"
-            />
+          {/* Background Layer - Blurred and darkened */}
+          <div className="absolute inset-0 w-full h-full overflow-hidden">
+            <div className="relative w-full h-full">
+              <Image
+                src={images[currentIndex].desktop}
+                alt=""
+                fill
+                className="object-cover"
+                priority={currentIndex === 0}
+                sizes="100vw"
+                style={{
+                  filter: 'blur(8px) brightness(0.7)',
+                  transform: 'scale(1.05)',
+                  width: '100%',
+                  height: '100%'
+                }}
+              />
+            </div>
           </div>
-          {/* Mobile Image - falls back to desktop if mobile not provided */}
-          <div className="md:hidden w-full h-full">
-            <Image
-              src={images[currentIndex].mobile || images[currentIndex].desktop}
-              alt=""
-              fill
-              className="object-cover"
-              priority={currentIndex === 0}
-              sizes="100vw"
-            />
+          
+          {/* Foreground Layer - Full height image */}
+          <div className="relative w-full h-full flex items-center justify-center">
+            <div className="relative w-full h-full">
+              <Image
+                src={images[currentIndex].desktop}
+                alt=""
+                fill
+                className="object-contain"
+                priority={currentIndex === 0}
+                sizes="100vw"
+                style={{
+                  width: '100%',
+                  height: '100%',
+                  objectFit: 'contain',
+                  objectPosition: 'center'
+                }}
+              />
+            </div>
           </div>
           <div className="absolute inset-0 bg-black/30 flex items-center justify-center">
             {images[currentIndex].text && (
