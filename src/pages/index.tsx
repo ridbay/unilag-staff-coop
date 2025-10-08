@@ -6,6 +6,7 @@ const heroImg1 = "/imgs/heroImg1.png";
 const heroImg1Mobile = "/imgs/heroImg1Mobile.png";
 const heroImg2 = "/imgs/heroImg2.jpg";
 const heroImg3 = "/imgs/heroImg3.jpg";
+const heroImg5 = "/imgs/heroImg5.jpeg";
 import Typography from "@mui/material/Typography";
 import { whoWeAreSectionData } from "@/data/HomeData";
 import MiniCard, { MiniCardWithImage } from "@/components/mini-card";
@@ -31,10 +32,10 @@ export default function Home() {
       desktop: heroImg2,
       text: ""
     },
-    // {
-    //   desktop: heroImg3,
-    //   text: ""
-    // }
+    {
+      desktop: heroImg5,
+      text: ""
+    }
   ];
 
   useEffect(() => {
