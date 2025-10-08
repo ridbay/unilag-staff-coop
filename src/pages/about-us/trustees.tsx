@@ -2,7 +2,7 @@ import TrusteesCard from "@/components/about-components/TrusteesCard";
 import AboutLayout from "@/components/layouts/AboutLayout";
 
 //  Images
-import President from "../../../public/management/DR A A ADEBAYO - PRESIDENT.jpg";
+import President from "../../../public/management/Dr Afolabi Adebayo President.png";
 import GenSec from "../../../public/management/MR. FELIX O AKEJU - GENERAL SECRETARY.jpg";
 import Treasurer from "../../../public/management/MR A I OLALEYE - TREASURER.jpg";
 
