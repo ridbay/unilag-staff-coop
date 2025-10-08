@@ -4,6 +4,7 @@
 /node_modules
 /.pnp
 .pnp.js
+node_modules
 
 # testing
 /coverage
@@ -34,3 +35,16 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# Cache
+.cache
+.vercel
+.now
+.vscode
+.DS_Store
+
+
+# Large files
+*.zip
+*.tar.gz
+*.log
