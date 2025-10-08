@@ -43,7 +43,18 @@ export default function Home() {
                   src="/pdf/Unique_26th.pdf"
              style={{width: '100%', height: '80vh', padding: '2vh !important'}}>
           </iframe> */}
-              <img src="/imgs/agm_banner2.jpg" alt="agm_sub_banner" style={{ width: '100%', margin: 'auto', height: '70vh' }} />
+              <div style={{ position: 'relative', width: '100%', height: '70vh', margin: 'auto' }}>
+                <Image
+                  src="/imgs/agm_banner2.jpg"
+                  alt="agm_sub_banner"
+                  fill
+                  style={{
+                    objectFit: 'cover',
+                    objectPosition: 'center'
+                  }}
+                  priority
+                />
+              </div>
               <button style={{ margin: '5px', width: '50%' }}>
                 <FileDownload downloadLink="/pdf/Unique_26th.pdf" message="Download AGM Report" />
               </button>
