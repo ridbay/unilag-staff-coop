@@ -4,7 +4,8 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "rm -rf .next/cache && next build",
+    "build": "rm -rf .next/cache && next build && rm -rf .next/cache/webpack/client-production/*.pack",
+    "postbuild": "find .next -name '*.pack' -delete",
     "start": "next start",
     "lint": "next lint"
   },
