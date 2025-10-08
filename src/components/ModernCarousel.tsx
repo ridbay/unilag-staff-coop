@@ -65,7 +65,7 @@ const ModernCarousel: React.FC<CarouselProps> = ({
   };
 
   return (
-    <div className="relative w-full h-[80vh] overflow-hidden">
+    <div className="relative w-full h-[50vh] sm:h-[60vh] md:h-[70vh] lg:h-[80vh] overflow-hidden">
       <AnimatePresence initial={false} custom={direction}>
         <motion.div
           key={currentIndex}
@@ -103,7 +103,7 @@ const ModernCarousel: React.FC<CarouselProps> = ({
           
           {/* Foreground Layer - Full height image */}
           <div className="relative w-full h-full flex items-center justify-center">
-            <div className="relative w-full h-full">
+            <div className="relative w-full h-[85%] md:h-full">
               <Image
                 src={images[currentIndex].desktop}
                 alt=""
