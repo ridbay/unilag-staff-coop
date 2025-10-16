@@ -67,7 +67,13 @@ export default function Home() {
                 />
               </div>
               <button style={{ margin: '5px', width: '50%' }}>
-                <FileDownload downloadLink="/pdf/Unique_26th.pdf" message="Download AGM Report" />
+                {/* <FileDownload downloadLink="/pdf/Unique_26th.pdf" message="Download AGM Report" /> */}
+                {/* redirect to download page */}
+                <Link href="/resources/downloads">
+                  <button className="bg-theme-color px-6 py-4 rounded-md hover:bg-white hover:border-2 hover:border-theme-color scroll-smooth hover:text-theme-color transition-all duration-700 ease-in-out text-white mt-4">
+                    Download Reports and Forms
+                  </button>
+                </Link>
               </button>
             </div>
           </Modal>
@@ -79,7 +85,7 @@ export default function Home() {
         autoPlay={true}
         interval={5000}
       />
-      <MarqueeSlide />
+      {/* <MarqueeSlide /> */}
       <div className="py-[4rem] ">
         <div className="md:pl-[4rem] pl-[2rem] mb-12">
           <p className="text-[1.5rem] md:text-[2rem] font-semibold">Membership</p>

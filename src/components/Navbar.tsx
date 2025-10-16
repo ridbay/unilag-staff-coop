@@ -24,13 +24,14 @@ const pages = [
   { text: "Home", link: "/" },
   { text: "About us", link: "/about-us" },
   { text: "Product & Services", link: "/products-services" },
-  { text: "Resources", link: "/resources/downloads" },
+  { text: "Resources", link: "#" },
+  { text: "Downloads", link: "/resources/downloads" },
   { text: "Contact Us", link: "/contact-us" },
   { text: "Sign In", link: "/sign-in/member-login" },
 ];
 const resources = [
   { text: "Events", link: "/events/agm" },
-  { text: "Downloads", link: "/resources/downloads" },
+
   { text: "FAQs", link: "/faqs" },
 ];
 const authentication = [
@@ -71,7 +72,7 @@ const Navbar = () => {
   };
   const handleOpenUserMenu = (event: React.MouseEvent<HTMLElement>) => {
     setAnchorElUser(event.currentTarget);
-    console.log(event.currentTarget);
+    // console.log(event.currentTarget);
   };
 
   const handleCloseNavMenu = () => {
