@@ -11,7 +11,7 @@ module.exports = {
       user: "root",
       host: "196.45.48.166",
       ref: "origin/master",
-      repo: "https://github.com/ridbay/unilag-staff-coop.git",
+      repo: "https://github.com/chibuike-19/unilag-staff-coop.git",
       path: "/home/ubuntu",
       "pre-deploy-local": "",
       "post-deploy":
