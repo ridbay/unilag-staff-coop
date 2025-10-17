@@ -32,7 +32,7 @@ const Downloads = () => {
     createData(
       1,
       "27th Annual General Meeting (AGM) Report",
-      <FileDownload downloadLink="/pdf/#" />
+      <FileDownload downloadLink="/pdf/Unique_27th_Prog_2025.pdf" />
     ),
     createData(
       2,
@@ -44,11 +44,11 @@ const Downloads = () => {
       "25th Annual General Meeting (AGM) Report",
       <FileDownload downloadLink="/pdf/25TH AGM PROGRAMME OF EVENTS.pdf" />
     ),
-    createData(
-      4,
-      "22nd Annual General Meeting (AGM) Report",
-      <FileDownload downloadLink="#" />
-    ),
+    // createData(
+    //   4,
+    //   "22nd Annual General Meeting (AGM) Report",
+    //   <FileDownload downloadLink="#" />
+    // ),
     // createData(5, "Annual Financial Report", <FileDownload downloadLink="#" />),
     // createData(
     //   5,
@@ -56,11 +56,11 @@ const Downloads = () => {
     //   <FileDownload downloadLink="#" />
     // ),
     createData(
-      5,
+      4,
       "Equipment Loan Form",
       <FileDownload downloadLink="/pdf/Equipment-Loan-Form.pdf" />
     ), createData(
-      6,
+      5,
       "Home Ownership Loan Form",
       <FileDownload downloadLink="/pdf/HOME-OWNERSHIP-LOAN-FORM.pdf" />
     ),

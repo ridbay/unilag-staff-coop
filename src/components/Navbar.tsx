@@ -24,8 +24,8 @@ const pages = [
   { text: "Home", link: "/" },
   { text: "About us", link: "/about-us" },
   { text: "Product & Services", link: "/products-services" },
-  { text: "Resources", link: "#" },
   { text: "Downloads", link: "/resources/downloads" },
+  { text: "Resources", link: "#" },
   { text: "Contact Us", link: "/contact-us" },
   { text: "Sign In", link: "/sign-in/member-login" },
 ];
