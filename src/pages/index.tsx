@@ -1,6 +1,12 @@
-import Image from "next/image";
+import Image, { StaticImageData } from "next/image";
 import { Inter } from "next/font/google";
-import Carousel from "@/components/HomeCarousel";
+import ModernCarousel from "@/components/ModernCarousel";
+// Image paths in the public directory
+const heroImg1 = "/imgs/heroImg1.png";
+const heroImg1Mobile = "/imgs/heroImg1Mobile.png";
+const heroImg2 = "/imgs/heroImg2.jpg";
+const heroImg3 = "/imgs/heroImg3.jpg";
+const heroImg5 = "/imgs/heroImg5.jpeg";
 import Typography from "@mui/material/Typography";
 import { whoWeAreSectionData } from "@/data/HomeData";
 import MiniCard, { MiniCardWithImage } from "@/components/mini-card";
@@ -18,13 +24,18 @@ export default function Home() {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const CarouselData = [
     {
-      bgImg: "bg-carouselOne",
-      text: "",
-      mobileImg: "bg-carouselOneMobile",
+      desktop: heroImg1,
+      mobile: heroImg1Mobile,
+      text: ""
     },
-    { bgImg: "bg-carouselTwo", text: "" },
-    // { bgImg: "bg-carouselThree", text: "" },
-    // { bgImg: "bg-carouselFour", text: "" },
+    {
+      desktop: heroImg2,
+      text: ""
+    },
+    {
+      desktop: heroImg5,
+      text: ""
+    }
   ];
 
   useEffect(() => {
@@ -56,15 +67,25 @@ export default function Home() {
                 />
               </div>
               <button style={{ margin: '5px', width: '50%' }}>
-                <FileDownload downloadLink="/pdf/Unique_26th.pdf" message="Download AGM Report" />
+                {/* <FileDownload downloadLink="/pdf/Unique_26th.pdf" message="Download AGM Report" /> */}
+                {/* redirect to download page */}
+                <Link href="/resources/downloads">
+                  <button className="bg-theme-color px-6 py-4 rounded-md hover:bg-white hover:border-2 hover:border-theme-color scroll-smooth hover:text-theme-color transition-all duration-700 ease-in-out text-white mt-4">
+                    Download Reports and Forms
+                  </button>
+                </Link>
               </button>
             </div>
           </Modal>
         )
       }
 
-      <Carousel images={CarouselData} />
-      <MarqueeSlide />
+      <ModernCarousel
+        images={CarouselData}
+        autoPlay={true}
+        interval={5000}
+      />
+      {/* <MarqueeSlide /> */}
       <div className="py-[4rem] ">
         <div className="md:pl-[4rem] pl-[2rem] mb-12">
           <p className="text-[1.5rem] md:text-[2rem] font-semibold">Membership</p>
