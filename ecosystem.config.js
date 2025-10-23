@@ -1,7 +1,8 @@
 module.exports = {
   apps: [
     {
-      script: "staff-coop",
+      script: "npm start",
+      name: "staff-coop",
     },
   ],
 
