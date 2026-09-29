@@ -66,7 +66,7 @@ export default function Home() {
                   priority
                 />
               </div>
-              <button style={{ margin: '5px', width: '50%' }}>
+              <div style={{ margin: '5px', width: '50%' }}>
                 {/* <FileDownload downloadLink="/pdf/Unique_26th.pdf" message="Download AGM Report" /> */}
                 {/* redirect to download page */}
                 <Link href="/resources/downloads">
@@ -74,7 +74,7 @@ export default function Home() {
                     Download Reports and Forms
                   </button>
                 </Link>
-              </button>
+              </div>
             </div>
           </Modal>
         )

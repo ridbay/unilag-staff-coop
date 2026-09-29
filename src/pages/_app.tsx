@@ -16,8 +16,7 @@ export default function App({ Component, pageProps }: AppProps) {
   return (
     <div className={`${mulish.className} bg-[#fdfdfd0d]`}>
       <Head>
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <link href="https://fonts.googleapis.com/css?family=Mooli:regular" rel="stylesheet" />
+        <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta
           name="description"
